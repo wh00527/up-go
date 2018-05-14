@@ -1,0 +1,43 @@
+//
+// UI KIT STATIC TEMPLATE
+
+.crm-form-elements,
+.crm-alert-boxes,
+.crm-buttons,
+.crm-rating-stars,
+.crm-tabs,
+.crm-step-box,
+.crm-notification,
+.crm-tooltip,
+.crm-pagination,
+.crm-tinymec,
+.crm-imageuploader,
+.crm-datatable{
+  @include general-widget-style($brand-primary, $widget-header-margin-bottom);
+}
+
+.crm-form-elements {
+  padding-bottom:50px;
+}
+
+.crm-alert-boxes {
+  label {
+    margin-bottom:5px;
+    margin-top:10px;
+  }
+  #success{
+    color:$state-success-text;
+  }
+  #info{
+    color:$state-info-text;
+  }
+  #warning{
+    color:$state-warning-text;
+  }
+  #danger{
+    color:$state-danger-text;
+  }
+  .btn {
+    margin-right:20px;
+  }
+}

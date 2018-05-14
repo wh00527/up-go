@@ -1,0 +1,26 @@
+
+.modal-content {
+  .close{
+    opacity: .7;
+    margin-bottom:10px;
+    img {
+      width:16px;
+    }
+    &:hover {
+      opacity:1;
+    }
+  }
+}
+
+.modal-dialog{
+  @include media-breakpoint-up(md){
+    width:700px;
+  }
+  @include media-breakpoint-up(lg) {
+    width:900px;
+  }
+}
+
+.modal-footer {
+  border-top:none;
+}

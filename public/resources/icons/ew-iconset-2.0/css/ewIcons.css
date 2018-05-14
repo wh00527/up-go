@@ -1,0 +1,395 @@
+@font-face {
+    font-family: 'ew-icons-2'; 
+    src: url('../fonts/Easy-Weddings-Iconset-2.eot?3giwhd');
+    src: url('../fonts/Easy-Weddings-Iconset-2.eot?#iefix3giwhd') format('embedded-opentype'),
+         url('../fonts/Easy-Weddings-Iconset-2.woff?3giwhd') format('woff'),
+         url('../fonts/Easy-Weddings-Iconset-2.ttf?3giwhd') format('truetype'),
+         url('../fonts/Easy-Weddings-Iconset-2.svg?3giwhd#ew-icons-2') format('svg');
+    font-weight: normal; 
+    font-style: normal;
+}
+
+[class^="ew-icon-"], 
+[class*=" ew-icon-"],
+[class^="ew-num-"], 
+[class*=" ew-num-"] {
+    speak: none; 
+    font-style: normal; 
+    font-weight: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    line-height: 1; 
+    
+    /* Better Font Rendering =========== */ 
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale; 
+}
+
+[class^="ew-icon-"]:before, 
+[class*=" ew-icon-"]:before,
+[class^="ew-num-"]:before, 
+[class*=" ew-num-"]:before { 
+    font-family: 'ew-icons-2'; 
+}
+
+
+.ew-icon-star:before { content: "\e600"; }
+.ew-icon-accessories:before { content: "\e601"; }
+.ew-icon-accommodation:before { content: "\e602"; }
+.ew-icon-beauty:before { content: "\e603"; }
+.ew-icon-beauty-services:before { content: "\e603"; }
+.ew-icon-bomboniere:before { content: "\e604"; }
+.ew-icon-bridesmaids:before { content: "\e605"; }
+.ew-icon-cakes:before { content: "\e606"; }
+.ew-icon-cars:before { content: "\e607"; }
+.ew-icon-caterers:before { content: "\e608"; }
+.ew-icon-celebrants:before { content: "\e609"; }
+.ew-icon-decorations:before { content: "\e60a"; }
+.ew-icon-destinations:before { content: "\e60b"; }
+.ew-icon-destination-weddings:before { content: "\e60b"; }
+.ew-icon-dressdesigners:before { content: "\e60c"; }
+.ew-icon-wedding-dress-designers:before { content: "\e60c"; }
+.ew-icon-dresses:before { content: "\e60d"; }
+.ew-icon-wedding-dresses:before { content: "\e60d"; }
+.ew-icon-bride:before { content: "\e60d"; }
+.ew-icon-fitness:before { content: "\e60e"; }
+.ew-icon-flowergirl:before { content: "\e60f"; }
+.ew-icon-flowergirls:before { content: "\e60f"; }
+.ew-icon-flower-girl:before { content: "\e60f"; }
+.ew-icon-flower-girl-dresses:before { content: "\e60f"; }
+.ew-icon-flowers:before { content: "\e610"; }
+.ew-icon-formalwear:before { content: "\e611"; }
+.ew-icon-formal-wear:before { content: "\e611"; }
+.ew-icon-groom:before { content: "\e611"; }
+.ew-icon-giftregistry:before { content: "\e612"; }
+.ew-icon-gift-registry:before { content: "\e612"; }
+.ew-icon-hairmakeup:before { content: "\e613"; }
+.ew-icon-hair-and-makeup:before { content: "\e613"; }
+.ew-icon-hire:before { content: "\e614"; }
+.ew-icon-wedding-hire:before { content: "\e614"; }
+.ew-icon-honeymoon:before { content: "\e615"; }
+.ew-icon-honeymoons:before { content: "\e615"; }
+.ew-icon-invitations:before { content: "\e616"; }
+.ew-icon-invitation:before { content: "\e616"; }
+.ew-icon-invite:before { content: "\e616"; }
+.ew-icon-jewellery:before { content: "\e617"; }
+.ew-icon-lingerie:before { content: "\e618"; }
+.ew-icon-marriage-celebrant:before { content: "\e609"; }
+.ew-icon-music:before { content: "\e619"; }
+.ew-icon-hens-nights-and-bucks-parties:before { content: "\e61a"; }
+.ew-icon-parties:before { content: "\e61a"; }
+.ew-icon-hens-night:before { content: "\e61a"; }
+.ew-icon-bucks-night:before { content: "\e61a"; }
+.ew-icon-photo-booth:before { content: "\e61b"; }
+.ew-icon-photobooth:before { content: "\e61b"; }
+.ew-icon-photography:before { content: "\e61c"; }
+.ew-icon-camera:before { content: "\e61c"; }
+.ew-icon-photo:before { content: "\e61c"; }
+.ew-icon-wedding-planners:before { content: "\e61d"; }
+.ew-icon-planners:before { content: "\e61d"; }
+.ew-icon-reception:before { content: "\e61e"; }
+.ew-icon-reception-venues:before { content: "\e61e"; }
+.ew-icon-venues-reception:before { content: "\e61e"; }
+.ew-icon-services:before { content: "\e61f"; }
+.ew-icon-shoes:before { content: "\e620"; }
+.ew-icon-venues:before { content: "\e621"; }
+.ew-icon-ceremony:before { content: "\e621"; }
+.ew-icon-videography:before { content: "\e622"; }
+.ew-icon-video:before { content: "\e622"; }
+.ew-icon-budget:before { content: "\e623"; }
+.ew-icon-budget-dollar:before { content: "\e624"; }
+.ew-icon-budget-gbp:before { content: "\e625"; }
+.ew-icon-community:before { content: "\e626"; }
+.ew-icon-discussions:before { content: "\e626"; }
+.ew-icon-forum:before { content: "\e626"; }
+.ew-icon-directory:before { content: "\e627"; }
+.ew-icon-ideas:before { content: "\e629"; }
+.ew-icon-inspiration:before { content: "\e629"; }
+.ew-icon-guestlist:before { content: "\e628"; }
+.ew-icon-planner:before { content: "\e62a"; }
+.ew-icon-notes:before { content: "\e62a"; }
+.ew-icon-reviews:before { content: "\e62b"; }
+.ew-icon-review:before { content: "\e62b"; }
+.ew-icon-seating:before { content: "\e62c"; }
+.ew-icon-seating-planner:before { content: "\e62c"; }
+.ew-icon-shop:before { content: "\e62d"; }
+.ew-icon-supplier:before { content: "\e62e"; }
+.ew-icon-tools:before { content: "\e62f"; }
+.ew-icon-to-do-list:before { content: "\e62f"; }
+.ew-icon-website:before { content: "\e630"; }
+.ew-icon-wedding-website:before { content: "\e630"; }
+.ew-icon-child:before { content: "\e631"; }
+.ew-icon-infant:before { content: "\e632"; }
+.ew-icon-meal:before { content: "\e633"; }
+.ew-num-01:before { content: "\e634"; }
+.ew-num-02:before { content: "\e635"; }
+.ew-num-03:before { content: "\e636"; }
+.ew-num-04:before { content: "\e637"; }
+.ew-num-05:before { content: "\e638"; }
+.ew-num-06:before { content: "\e639"; }
+.ew-num-07:before { content: "\e63a"; }
+.ew-num-08:before { content: "\e63b"; }
+.ew-num-09:before { content: "\e63c"; }
+.ew-num-10:before { content: "\e63d"; }
+.ew-num-11:before { content: "\e63e"; }
+.ew-num-12:before { content: "\e63f"; }
+.ew-num-13:before { content: "\e640"; }
+.ew-num-14:before { content: "\e641"; }
+.ew-num-15:before { content: "\e642"; }
+.ew-num-16:before { content: "\e643"; }
+.ew-num-17:before { content: "\e644"; }
+.ew-num-18:before { content: "\e645"; }
+.ew-num-19:before { content: "\e646"; }
+.ew-num-20:before { content: "\e647"; }
+.ew-num-21:before { content: "\e648"; }
+.ew-num-22:before { content: "\e649"; }
+.ew-num-23:before { content: "\e64a"; }
+.ew-num-24:before { content: "\e64b"; }
+.ew-num-25:before { content: "\e64c"; }
+.ew-num-26:before { content: "\e64d"; }
+.ew-num-27:before { content: "\e64e"; }
+.ew-num-28:before { content: "\e64f"; }
+.ew-num-29:before { content: "\e650"; }
+.ew-num-30:before { content: "\e651"; }
+.ew-num-31:before { content: "\e652"; }
+.ew-num-32:before { content: "\e653"; }
+.ew-num-33:before { content: "\e654"; }
+.ew-num-34:before { content: "\e655"; }
+.ew-num-35:before { content: "\e656"; }
+.ew-num-36:before { content: "\e657"; }
+.ew-num-37:before { content: "\e658"; }
+.ew-num-38:before { content: "\e659"; }
+.ew-num-39:before { content: "\e65a"; }
+.ew-num-40:before { content: "\e65b"; }
+.ew-num-41:before { content: "\e65c"; }
+.ew-num-42:before { content: "\e65d"; }
+.ew-num-43:before { content: "\e65e"; }
+.ew-num-44:before { content: "\e65f"; }
+.ew-num-45:before { content: "\e660"; }
+.ew-num-46:before { content: "\e661"; }
+.ew-num-47:before { content: "\e662"; }
+.ew-num-48:before { content: "\e663"; }
+.ew-num-49:before { content: "\e664"; }
+.ew-num-50:before { content: "\e665"; }
+
+/* Depreciated 2015-05-22 10:00:39 @leoniecsanki */
+.icon-color-primary, .icon-color-pink { color: #e63077; }
+.icon-color-secondary, .icon-color-pink-light { color: #f495b2; }
+.icon-color-success, .icon-color-aqua { color: #7ddbd4; }
+.icon-color-info, .icon-color-aquamarine { color: #68cbdb; }
+.icon-color-yellow { color: #FFDF4C; }
+.icon-color-gold { color: #ffb32e; }
+.icon-color-orange { color: #FF7428; }
+.icon-color-warning { color: #ff7428; }
+.icon-color-danger { color: #be1d37; }
+.icon-color-red { color: #F22043; }
+.icon-color-purple { color: #7564a3; }
+.icon-color-blue { color: #0072BC; }
+.icon-color-green { color: #1a7b04; }
+.icon-color-white { color: #fff; }
+.icon-color-grey { color: #d6d6d6; }
+.icon-color-black { color: #444; }
+/* /END Depreciated 2015-05-22 10:00:39 @leoniecsanki */
+
+
+/* btn[class*="facebook"], i[class*="facebook"] { color: #3b5998; } */
+/* btn[class*="twitter"], i[class*="twitter"] { color: #4099ff; } */
+/* btn[class*="pinterest"], i[class*="pinterest"] { color: #c92228; } */
+/* btn[class*="google"], i[class*="google"], */
+/* btn[class*="google-plus"], i[class*="google-plus"] { color: #d34836; } */
+/* btn[class*="youtube"], i[class*="youtube"] { color: #e52d27; } */
+/* btn[class*="apple"], i[class*="apple"] { color: #545454; } */
+/* btn[class*="android"], i[class*="android"] { color: #A4C739; } */
+/* btn[class*="windows"], i[class*="windows"] { color: #1FAEFF; } */
+
+.ew-icon-color-lightpink, .ew-icon-color-secondary { color: #f495b2; color: rgba(244,149,178,1); }
+.ew-icon-color-lightpink-shade, .ew-icon-color-secondary-shade { color: #b5728b; color: rgba(181,114,139,1); }
+.ew-icon-color-white, .ew-icon-color-default { color: #ffffff; color: rgba(255,255,255,1); }
+.ew-icon-color-white-shade, .ew-icon-color-default-shade { color: #f7f7f7; color: rgba(247,247,247,1); }
+.ew-icon-color-lightgrey { color: #eaeaea; color: rgba(234,234,234,1); }
+.ew-icon-color-lightgrey-shade { color: #d6d6d6; color: rgba(214,214,214,1); }
+.ew-icon-color-darkpink, .ew-icon-color-primary { color: #e63077; color: rgba(230,48,119,1); }
+.ew-icon-color-darkpink-shade, .ew-icon-color-primary-shade { color: #9b014e; color: rgba(155,1,78,1); }
+.ew-icon-color-aquamarine, .ew-icon-color-info { color: #68cbdb; color: rgba(104,203,219,1); }
+.ew-icon-color-aquamarine-shade, .ew-icon-color-info-shade { color: #4f99a6; color: rgba(79,153,166,1); }
+.ew-icon-color-aqua { color: #7ddbd4; color: rgba(125,219,212,1); }
+.ew-icon-color-aqua-shade { color: #589994; color: rgba(88,153,148,1); }
+.ew-icon-color-mintgreen { color: #beede9; color: rgba(190,237,233,1); }
+.ew-icon-color-mintgreen-shade { color: #98beba; color: rgba(152,190,186,1); }
+.ew-icon-color-skyblue { color: #c3eaf1; color: rgba(195,234,241,1); }
+.ew-icon-color-skyblue-shade { color: #9cbbc1; color: rgba(156,187,193,1); }
+.ew-icon-color-lilac { color: #e3dcef; color: rgba(227,220,239,1); }
+.ew-icon-color-lilac-shade { color: #9f9aa7; color: rgba(159,154,167,1); }
+.ew-icon-color-antique { color: #f8ede2; color: rgba(248,237,227,1); }
+.ew-icon-color-antique-shade { color: #c6beb5; color: rgba(198,190,181,1); }
+.ew-icon-color-lemonyellow { color: #ffdda1; color: rgba(255,221,161,1); }
+.ew-icon-color-lemonyellow-shade { color: #ccb181; color: rgba(204,177,129,1); }
+.ew-icon-color-yellow { color: #ffdf4c; color: rgba(255,223,76,1); }
+.ew-icon-color-yellow-shade { color: #ccb23d; color: rgba(204,178,61,1); }
+.ew-icon-color-gold, .ew-icon-color-highlight { color: #ffb32e; color: rgba(255,179,46,1); }
+.ew-icon-color-gold-shade, .ew-icon-color-highlight-shade { color: #cc8000; color: rgba(204,128,0,1); }
+.ew-icon-color-orange, .ew-icon-color-warning { color: #f46f26; color: rgba(244,111,38,1); }
+.ew-icon-color-orange-shade, .ew-icon-color-warning-shade { color: #a54d1d; color: rgba(165,77,29,1); }
+.ew-icon-color-red, .ew-icon-color-danger, .ew-icon-color-error { color: #e41e3f; color: rgba(228,30,63,1); }
+.ew-icon-color-red-shade, .ew-icon-color-danger-shade, .ew-icon-color-error-shade { color: #891226; color: rgba(137,18,38,1); }
+.ew-icon-color-purple { color: #7564a3; color: rgba(117,100,163,1); }
+.ew-icon-color-purple-shade { color: #281756; color: rgba(40,23,86,1); }
+.ew-icon-color-blue, .ew-icon-color-link { color: #0065af; color: rgba(0,101,175,1); }
+.ew-icon-color-blue-shade, .ew-icon-color-link-shade { color: #00256f; color: rgba(4,61,104,1); }
+.ew-icon-color-darkblue { color: #105d79; color: rgba(16,93,121,1); }
+.ew-icon-color-darkblue-shade { color: #043d68; color: rgba(16,93,121,1); }
+.ew-icon-color-green, .ew-icon-color-success { color: #1a7b04; color: rgba(26,123,4,1); }
+.ew-icon-color-green-shade, .ew-icon-color-success-shade { color: #114a1f; color: rgba(17,74,31,1); }
+.ew-icon-color-teal { color: #3f6e6a; color: rgba(63,110,106,1); }
+.ew-icon-color-teal-shade { color: #254240; color: rgba(37,66,64,1); }
+.ew-icon-color-greyblack, .ew-icon-color-inverse { color: #444444; color: rgba(68,68,68,1); }
+.ew-icon-color-greyblack-shade, .ew-icon-color-inverse-shade { color: #222222; color: rgba(34,34,34,1); }
+.ew-icon-color-mediumgrey, .ew-icon-color-muted { color: #a1a1a1; color: rgba(161,161,161,1); }
+.ew-icon-color-mediumgrey-shade, .ew-icon-color-muted-shade { color: #696969; color: rgba(105,105,105,1); }
+.ew-icon-color-black { color: #000000; color: rgba(0,0,0,1); }
+
+
+/* Easy Weddings Popicons (An icon in a circle! -LC */
+
+.ew-popicon { display: table; height: 60px; width: 60px; padding: 0; margin: 0 auto; margin-bottom: 15px; text-align: center; background-color: #e63077; border-radius: 500px; }
+.ew-popicon:hover, a.ew-popicon:active, a.ew-popicon:focus { background-color: #ae0a58; text-decoration: none; color: #fff; }
+.ew-popicon > span { display: table-cell; height: 60px; vertical-align: middle; text-align: center; }
+.ew-popicon > span > i { color: #fff; font-size: 48px; }
+
+/* With text inside the circle */
+.ew-popicon.ew-popicon-wtext { display: block; overflow: hidden; height: 90px; width: 90px; }
+.ew-popicon.ew-popicon-wtext > span { display: block; height: 40px; margin-top: 5px; width: 100%; }
+.ew-popicon.ew-popicon-wtext > span > i { font-size: 26px; margin-top: 10px; }
+.ew-popicon.ew-popicon-wtext > h4 { color: #ffffff; font-size: 13px; font-weight: 600; margin-top: 0; }
+
+@media (min-width: 992px) {
+    .ew-popicon.ew-popicon-wtext { height: 120px; width: 120px; }
+    .ew-popicon.ew-popicon-wtext > span { height: 55px; margin-top: 10px; }
+    .ew-popicon.ew-popicon-wtext > span > i { font-size: 36px; }
+    .ew-popicon.ew-popicon-wtext > h4 { font-size: 16px; }
+}
+
+/* Size it */
+.ew-popicon.ew-popicon-xs { height: 24px; width: 24px; }
+.ew-popicon.ew-popicon-xs > span { height: 24px; }
+.ew-popicon.ew-popicon-xs > span > i { font-size: 18px; }
+
+.ew-popicon.ew-popicon-sm { height: 40px; width: 40px; }
+.ew-popicon.ew-popicon-sm > span { height: 40px; }
+.ew-popicon.ew-popicon-sm > span > i { font-size: 32px; }
+
+.ew-popicon.ew-popicon-md { height: 60px; width: 60px; }
+.ew-popicon.ew-popicon-md > span { height: 60px; }
+.ew-popicon.ew-popicon-md > span > i { font-size: 48px; }
+
+.ew-popicon.ew-popicon-lg { height: 90px; width: 90px; }
+.ew-popicon.ew-popicon-lg > span { height: 90px; }
+.ew-popicon.ew-popicon-lg > span > i { font-size: 72px; }
+
+.ew-popicon.ew-popicon-xl { height: 120px; width: 120px; }
+.ew-popicon.ew-popicon-xl > span { height: 120px; }
+.ew-popicon.ew-popicon-xl > span > i { font-size: 96px; }
+
+/* Colourise it */
+.ew-popicon-default { background-color: #e63077; }
+.ew-popicon-default:hover, .ew-popicon-default:active, .ew-popicon-default:focus { background-color: #ae0a58; }
+.ew-popicon-default > span > i, a.ew-popicon-default > span > i, .ew-popicon-default.ew-popicon-wtext > h4, a.ew-popicon-default.ew-popicon-wtext > h4 { color: #fff; }
+.ew-popicon-default:hover > span > i, .ew-popicon-default:active > span > i, .ew-popicon-default:focus > span > i, .ew-popicon-default.ew-popicon-wtext:hover > h4, .ew-popicon-default.ew-popicon-wtext:active > h4, .ew-popicon-default.ew-popicon-wtext:focus > h4 { color: #ae0a58; }
+
+.ew-popicon-white { background-color: #fff; }
+.ew-popicon-white:hover, .ew-popicon-white:active, .ew-popicon-white:focus { -webkit-box-shadow: 0 0 20px 0 rgba(0,0,0,0.4); box-shadow: 0 0 20px 0 rgba(0,0,0,0.4); }
+.ew-popicon-white > span > i, a.ew-popicon-white > span > i, .ew-popicon-white.ew-popicon-wtext > h4, a.ew-popicon-white.ew-popicon-wtext > h4 { color: #e63077; }
+.ew-popicon-white:hover > span > i, .ew-popicon-white:active > span > i, .ew-popicon-white:focus > span > i, .ew-popicon-white.ew-popicon-wtext:hover > h4, .ew-popicon-white.ew-popicon-wtext:active > h4, .ew-popicon-white.ew-popicon-wtext:focus > h4 { color: #ae0a58; }
+
+.ew-popicon-mono { background-color: #fff; }
+.ew-popicon-mono:hover, .ew-popicon-mono:active, .ew-popicon-mono:focus { background-color: #fff; -webkit-box-shadow: 0 0 20px 0 rgba(0,0,0,0.4); box-shadow: 0 0 20px 0 rgba(0,0,0,0.4); }
+.ew-popicon-mono > span > i, a.ew-popicon-mono > span > i, .ew-popicon-mono.ew-popicon-wtext > h4, a.ew-popicon-mono.ew-popicon-wtext > h4 { color: #444; }
+.ew-popicon-mono:hover > span > i, .ew-popicon-mono:active > span > i, .ew-popicon-mono:focus > span > i, .ew-popicon-mono.ew-popicon-wtext:hover > h4, .ew-popicon-mono.ew-popicon-wtext:active > h4, .ew-popicon-mono.ew-popicon-wtext:focus > h4 { color: #000; }
+
+/* /END Easy Weddings Popicons */
+
+/* Rating stars */
+
+.ew-rating-stars {
+    font: normal normal normal 14px/1 FontAwesome
+}
+.ew-rating-stars .fa {
+    color: #b4b4b4
+}
+.ew-rating-2x {
+    font-size: 2em
+}
+[class*=ew-rating-score] {
+    position: relative
+}
+.ew-rating-score-00 .fa-star:before {
+    color: #b4b4b4
+}
+.ew-rating-score-05:after {
+    content: "\f089";
+    color: #ffb22d;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+.ew-rating-score-10 .fa-star:first-child,
+.ew-rating-score-15 .fa-star:first-child {
+    color: #ffb22d
+}
+.ew-rating-score-15:after {
+    content: "\f089";
+    color: #ffb22d;
+    position: absolute;
+    top: 0;
+    left: 20%
+}
+.ew-rating-score-20 .fa-star:first-child,
+.ew-rating-score-20 .fa-star:nth-child(2),
+.ew-rating-score-25 .fa-star:first-child,
+.ew-rating-score-25 .fa-star:nth-child(2) {
+    color: #ffb22d
+}
+.ew-rating-score-25:after {
+    content: "\f089";
+    color: #ffb22d;
+    position: absolute;
+    top: 0;
+    left: 40%
+}
+.ew-rating-score-30 .fa-star,
+.ew-rating-score-35 .fa-star {
+    color: #ffb22d
+}
+.ew-rating-score-30 .fa-star:last-child,
+.ew-rating-score-30 .fa-star:nth-last-child(2),
+.ew-rating-score-35 .fa-star:last-child,
+.ew-rating-score-35 .fa-star:nth-last-child(2) {
+    color: #b4b4b4
+}
+.ew-rating-score-35:after {
+    content: "\f089";
+    color: #ffb22d;
+    position: absolute;
+    top: 0;
+    left: 60%
+}
+.ew-rating-score-40 .fa-star,
+.ew-rating-score-45 .fa-star {
+    color: #ffb22d
+}
+.ew-rating-score-40 .fa-star:last-child,
+.ew-rating-score-45 .fa-star:last-child {
+    color: #b4b4b4
+}
+.ew-rating-score-45:after {
+    content: "\f089";
+    color: #ffb22d;
+    position: absolute;
+    top: 0;
+    left: 80%
+}
+.ew-rating-score-50 .fa-star {
+    color: #ffb22d
+}
+
+/* End rating stars */

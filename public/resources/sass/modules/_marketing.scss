@@ -1,0 +1,210 @@
+.crm-marketing-widget {
+  @include general-widget-style ($brand-primary, $widget-header-margin-bottom);
+
+  .nav-pills {
+    margin-bottom:10px;
+    .nav-item {
+
+      &:last-child {
+        background-color:#fff;
+        .nav-link {
+          background-color:#fff;
+          font-size:12px;
+          text-align: right;
+          &:hover {
+            color:$gray-dark;
+            text-decoration: underline;
+          }
+          &.active {            
+            color:#fff;
+            background:$brand-primary;
+            width:auto;
+            max-width: 150px;
+            text-align:center;
+            float:right;
+          }
+        }        
+      }
+      .nav-link {
+        &.active {
+          color:#fff;
+        }
+        span {
+          text-transform: uppercase;
+        }        
+      }
+    }    
+  }
+  .single-box {
+    position:relative;
+    box-shadow:none;
+    background-color:#fff;
+    border:1px solid $grey-seperator;
+    .second-part {
+      display:none;
+    }
+    .all-done {
+      display:flex;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        font-size:60px;
+      }
+      span {
+        font-size:30px;
+        color:$state-success-text;
+        &.small {
+          font-size:14px;
+          margin-left:1.5 * $spacer;
+        }
+      }
+    } 
+    &:hover,
+    &:focus{
+      @include box-shadow-no-param;
+    }
+    img {     
+      @include media-breakpoint-down(sm) {
+        margin-right:0 !important;
+      } 
+    }
+
+    i.fa-info-circle {
+      position:absolute;
+      right:10px;
+      top:10px;
+    }
+    
+    i.fa-check-circle-o,
+    i.fa-check-circle{
+      font-size:45px;
+      color:$grey-disable-text;
+    }
+
+    i.fa-thumbs-o-up  {
+      font-size:45px;
+      color:$state-success-text
+    }
+
+    .setHeight {
+      max-height:500px;
+      overflow: hidden;
+      img {
+        border:2px solid $grey-second-dark;
+      }
+    }
+
+    &:last-child {
+      &:hover {
+       border:1px solid $brand-success;
+      }
+    }
+    &.badgetsAndButtons {
+      &:hover {
+        border-color: $grey-seperator;
+      }
+    }
+  }
+}
+
+.crm-neem-help-popup {
+   @include general-widget-style ($brand-primary, $widget-header-margin-bottom);
+   
+}
+.customise-your-widget,
+.crm-text-links,
+.crm-email-signaure {
+   @include general-widget-style ($grey-seperator, $widget-header-margin-bottom); 
+   margin-top:15px;
+   background-color:$grey-bg;
+}
+
+.customise-your-widget {   
+  margin-top:0;
+
+  @include media-breakpoint-down(md){
+     margin-top:$spacer;
+    .dropdown {
+      &.number {
+        max-width:$btn-min-width;
+      }      
+    }
+  }
+
+  .setHeightReviewWidgetCopy {
+    height:190px;
+  }
+  .finish-reviewWidget {
+    button.disabled{
+      border-color:$grey-seperator;
+    }
+  }
+}
+
+#marketing-need-help {
+  
+   .modal-content {
+     background-color:transparent;
+     border:none;
+   }
+   .modal-footer {
+     border-top:none;
+   }
+
+}
+
+.widget-preview {
+  .author {
+    font-style: italic;
+    font-size: 12px;
+    span {
+      font-weight:600;
+    }
+  }
+  &.social-icon-preview {
+    border:1px solid $grey-seperator;
+    width:300px;
+    height:300px;
+    @include v-h-center;
+  }
+}
+
+.copy-code-section-container {
+
+  .text-copied {
+    color:$brand-success;
+    float:right;
+    margin-right:25px;
+  }
+}
+
+.js-textareacopybtn {
+  button {
+    min-width:100px; 
+    &:focus {
+      outline:none;
+    }
+  }
+}
+
+.has-success{
+  .js-textareacopybtn {
+    button {     
+      border-color:$btn-success-border;
+      background-color:$btn-success-bg;
+    } 
+  }
+}
+
+
+
+ 
+
+
+
+
+
+
+
+

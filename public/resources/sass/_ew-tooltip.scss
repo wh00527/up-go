@@ -1,0 +1,10 @@
+.ew-tooltip {
+  font-size:20px;
+  color:$grey-text;
+  &:hover {
+    color:$brand-primary;
+  }
+}
+.tooltip {
+  @include ew-tooltip;
+}

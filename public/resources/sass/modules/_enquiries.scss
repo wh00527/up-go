@@ -1,0 +1,50 @@
+.crm-enquiries-widget {
+
+  @include general-widget-style ($brand-primary,$widget-header-margin-bottom);
+
+  .card {
+    border:none;
+  }
+  .padding-free {
+    padding:0;
+  }
+
+}
+
+.crm-enquiries {
+
+
+
+  & .phone i{
+    color: $brand-tertiary;
+  }
+
+  & .email i{
+    color: $brand-primary;
+  }
+
+  & .prospect-notes {
+    border-left: 1px solid $gray-lighter;
+  }
+
+  & .notes {
+    padding: 20px 10px;
+    background: #f9f6e0;
+    color: #957c67;
+    text-align: center;
+  }
+
+  & .notes label{
+    color: #957c67;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  & .card-title{
+    margin-bottom: 0;
+  }
+
+
+
+}

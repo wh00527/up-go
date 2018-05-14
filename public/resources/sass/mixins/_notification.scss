@@ -1,0 +1,14 @@
+@mixin notification ($color, $background-color) {
+ 
+  background-image:none !important;
+  background-color:$background-color !important;
+  color:$color;
+  
+  .toast-message {
+    font-size:1.2rem !important;
+    line-height: 1.7;
+  }
+  button {
+    color:$color;
+  }    
+}

@@ -1,0 +1,29 @@
+#toast-container > div {
+  opacity:1;
+  @include media-breakpoint-up (md) {
+    width:500px;
+  }
+}
+
+
+
+#toast-container > .toast-success {
+  @include notification ($notification-success-text, $notification-success);
+}
+
+#toast-container > .toast-warning {
+   @include notification ($notification-warning-text, $notification-warning);
+
+  
+}
+
+#toast-container > .toast-info {
+    @include notification ($notification-info-text, $notification-info);
+
+}
+
+#toast-container > .toast-error {
+    @include notification ($notification-error-text, $notification-error);
+
+}
+

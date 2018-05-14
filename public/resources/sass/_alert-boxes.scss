@@ -1,0 +1,17 @@
+
+
+.alert-success {
+  @include alert-box($state-success-bg, $state-success-border, $state-success-text);
+}
+
+.alert-info {
+  @include alert-box($state-info-bg, $state-info-border, $state-info-text);
+}
+
+.alert-warning {
+  @include alert-box($state-warning-bg, $state-warning-border, $state-warning-text);
+}
+
+.alert-danger {
+  @include alert-box($state-danger-bg, $state-danger-border, $state-danger-text);
+}

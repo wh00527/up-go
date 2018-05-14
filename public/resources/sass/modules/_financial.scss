@@ -1,0 +1,93 @@
+.crm-financial-widget,
+.credit-card-details,
+.payment-method {
+  @include general-widget-style ($brand-primary, $widget-header-margin-bottom);
+}
+
+.crm-financial-widget {
+
+  .credit-card-details {
+    box-shadow:none;
+    padding:0;
+    margin-bottom:0;
+
+    .center {
+      @include v-center;
+    }  
+  }
+  .payment-method {
+    box-shadow:none;
+    padding-left:10px;
+    padding-right:10px;
+    .single-box {
+      padding:$spacer; 
+      p {
+        font-size:12px;
+      }
+    }
+  }
+  .reduced-width {
+    width:80%;
+    @include media-breakpoint-up(sm) {
+      width:90%;
+    }
+  }
+  #financialcvv {
+    max-width:110px;
+  }
+}
+
+#crm-financial-invoice-table {
+  margin-top:-15px;
+  thead {
+    border-bottom:1px solid $grey-darkest;
+    th{
+      &:nth-child(4) {
+        border-right:1px solid $grey-seperator;
+        padding-top:15px;
+      }
+      &:nth-child(5) {
+        padding-left:$spacer;
+      }
+    }
+  }
+  tbody{
+    tr {
+      margin-left:$spacer;
+      td {
+        border-bottom: 1px solid $grey-seperator;
+        &:first-child {
+          padding-left:$spacer * 2;
+        }
+        &:nth-child(4) {
+          border-right:1px solid $grey-seperator;
+        }
+        &:nth-child(5) {
+          padding-left:$spacer;
+        } 
+      }
+
+    }
+  }
+
+  .radio label {
+    padding-left:0.65rem;
+  }
+  
+  .unpaid {
+    td {
+      strong {
+        color:$mono;
+      }
+    }
+  }
+  
+  .paid {
+   
+    background-color:$grey-bg;
+    td {
+      padding-top:$spacer * 2;
+      padding-bottom:$spacer * 2;
+    }
+  }
+}

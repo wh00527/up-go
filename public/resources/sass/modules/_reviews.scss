@@ -1,0 +1,24 @@
+.crm-reviews {
+  @include general-widget-style ($brand-primary, 0){
+
+  }
+  .value {
+    color: $black;
+    font-size: 16px;
+  }
+  .row {
+    padding: 10px 0;
+  }
+
+  .row.review {
+    border-bottom: solid 1px $gray-lightest;
+  }
+
+  i.directory {
+    font-size: 20px;
+    float: left;
+    padding: 0 5px 0 0;
+    margin: -5px 0 0 0;
+  }
+
+}

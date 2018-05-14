@@ -1,0 +1,190 @@
+
+
+td, th {
+  font-size: 13px;
+  color:$grey-second-dark;
+}
+
+th {
+  font-weight: 400;
+  color:$label;
+  text-transform:capitalize;
+}
+
+tfoot {
+  td {
+    color:$grey-darkest;
+    font-weight:500;
+  }
+}
+
+
+.ibox-content h1, .ibox-content h2, .ibox-content h3, .ibox-content h4, .ibox-content h5,
+.ibox-title h1, .ibox-title h2, .ibox-title h3, .ibox-title h4, .ibox-title h5 {
+  margin-top: 5px;
+}
+
+.ibox-content.text-box {
+  padding-bottom: 0px;
+  padding-top: 15px;
+}
+
+.ibox {
+  clear: both;
+  margin-bottom: 25px;
+  @include general-widget-style($brand-enquiries, 0);
+}
+
+.ibox.collapsed .ibox-content{
+  display: none;
+}
+.ibox.collapsed .fa.fa-chevron-up:before {
+  content: "\f078";
+}
+.ibox.collapsed .fa.fa-chevron-down:before {
+  content: "\f077";
+}
+
+.ibox:after, .ibox:before {
+  display: table;
+}
+
+.ibox-title {
+  color: inherit;
+  text-transform:uppercase;
+  min-width:310px;
+  text-align: left;
+}
+
+.ibox-content {
+  color: inherit;
+  border:none;
+  text-align: center;
+  font-size:12px;
+ 
+ .table thead th {
+    border:0;
+    background-color:#fff;
+    color: $table-heading;
+  }
+  .table {
+    text-align: left;
+    tr {
+      background-color:#f2f2f2;
+    }
+    tr.unread {
+      font-weight:600;
+      background-color:#fff;
+    }
+
+    td i {
+      // padding: 0 10px;
+    }
+
+    thead th {
+      border-bottom-color: #000!important;
+    }
+    tbody th, td {
+      border-top: none;
+      border-bottom: 1px solid #eceeef;
+    }
+
+
+  }
+  .btn{
+    margin-top:40px;
+    margin-bottom:0px;
+    width:213px;
+    height:40px;
+    background-color:$brand-enquiries;
+  }
+}
+
+table.table-mail tr d {
+  padding: 12px;
+}
+
+.table-mail .check-mail {
+  padding-left: 20px;
+}
+
+.table-mail .mail-date {
+  padding-right: 20px;
+}
+
+ibox-content {
+  clear: both;
+}
+
+.ibox-heading {
+  background-color: #f3f6fb;
+  border-bottom: none;
+}
+
+.ibox-heading h3 {
+  font-weight: 200;
+  font-size: 24px;
+}
+
+.ibox-title h5 {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0 0 4px 0;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  margin-bottom:10px;
+  span {
+    margin-left:35px;
+  }
+}
+
+.ibox-title .label {
+  float: left;
+  margin-left: 4px;
+}
+
+.ibox-tools {
+  display: inline-block;
+  float: right;
+  margin-top: 0;
+  position: relative;
+  padding-top:10px;
+}
+
+.ibox-tools a {
+  float: right;
+  margin-top: 3px;
+  font-size: 10px;
+  color: #4d4d4d;
+  text-transform: uppercase;
+}
+
+.ibox-tools a.btn-primary {
+  color: #fff;
+}
+
+.ibox-tools .dropdown-menu > li > a {
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.ibox .open > .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+.reviews {
+  .ibox-title {
+    border-bottom:1px solid $brand-reviews;
+  }
+  .ibox-content{
+    th.rating {
+      min-width:79px;
+    }
+    .btn{
+      background-color:$brand-reviews;
+    }
+  } 
+
+}

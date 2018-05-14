@@ -1,0 +1,7 @@
+@mixin input-group-addon ($background-color, $color, $width) {
+  background-color:$background-color;
+  color:$color;
+  width:$width;
+  text-transform:uppercase;
+}
+

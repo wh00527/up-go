@@ -1,0 +1,774 @@
+.crm-account-widget {
+  @include general-widget-style ($brand-primary,$widget-header-margin-bottom);  
+  .card {
+    border:none;
+  }
+  .padding-free {
+    padding:0;
+  }
+
+  .dropdown {
+   @include dropdown-normal (100%, 210px);
+   .btn {
+      width:100%;
+    }
+    .dropdown-toggle {
+      border:1px solid $grey-disable-text;
+      border-radius:0;
+    }
+  }
+
+  #businessname {
+    border:none;
+    pointer-events:none;
+    background-color:$gray-lightest;
+    color:#444;
+  } 
+
+  #request-name-change {
+    @include media-breakpoint-down(sm){
+      margin-top:10px;
+      margin-bottom:10px;
+    }
+    margin-top:18px;
+  }
+  
+  .billing-contact {
+    .header{
+      padding-top:0
+    }
+    background-color:$brand-secondary;
+    padding:20px;
+    margin-bottom: $spacer * 2;
+   
+    h5 {
+      span {
+        font-size:12px;
+        color:$grey-text;
+        font-weight:300;
+        text-transform: lowercase;
+        margin-left:10px;
+      }
+    }
+  }
+}
+
+.ew-listing {
+  margin: 10px;
+  background: $listing-background;
+  box-shadow: 0px 2px 0 0 $listing-shadow;
+
+  & .no-gutter-left {
+    padding-left:0;
+  }
+
+  & .no-gutter-right {
+    padding-right:0;
+  }
+
+  & .supplier-name {
+    font-weight: 600;
+    font-size: 22px;
+  }
+
+  & .supplier-name i {
+    color: #555;
+  }
+
+  & .details{
+    padding-top: 15px;
+    border-right: solid 1px $listing-shadow;
+  }
+
+  & .details .row {
+    padding-left: 10px;
+  }
+
+  & p {
+    font-size: 12px;
+  }
+
+  & .special-offer{
+    background-image: url("/images/special-badge.svg");
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 74px;
+    height: 55px;
+    top: -4px;
+    right: 30px;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 0px;
+    line-height: 15px;
+  }
+
+  & .special-offer span {
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  & hr {
+    padding: 5px 0;
+    margin: 0;
+  }
+
+  & .summary {
+    position: absolute;
+    bottom: 10px;
+    z-index: 1;
+    color: #fff;
+    left: 30%;
+  }
+
+  & .summary .value{
+    padding: 0 5px 0 2px;
+    font-weight: 600;
+    font-size: 10px;
+  }
+
+  & .summary i {
+    font-size: 15px;
+  }
+
+  & .reviews i{
+    font-size: 18px
+  }
+
+  & .headline{
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+
+  & .description {
+    line-height: 14px;
+  }
+
+  &.btn-default:hover i{
+    color: #333;
+  }
+
+  &.supplier-premium .actions {
+    margin-top: 50px;
+  }
+
+  &.supplier-priority .actions {
+    margin-top: 50px;
+  }
+
+  &.supplier-standard .actions {
+    margin-top: 20px;
+  }
+
+  & .actions button {
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-bottom: 20px;
+
+    &.btn-profile {
+      padding: 8px 15px;
+      letter-spacing: 2px;
+      box-shadow: 0 3px 0 0 $button-shadow;
+    }
+    &.btn-website {
+      padding: 8px 15px;
+      letter-spacing: 2px;
+    }
+
+  }
+  .btn-reset {
+    background-color:transparent;
+    border:none;
+    width:auto;
+    height:auto;
+    padding:0;
+    &:hover,
+    &:focus{
+      background-color:transparent;
+      border:none;
+    }
+  }
+}
+
+.supplier-platinum {
+  & .parent {
+    position: relative;
+  }
+  & .overlay {
+    background-image: linear-gradient(to bottom, transparent, black);
+    width: 100%;
+    height: 25%;
+    position: absolute;
+    bottom: 0;
+  }
+  & .tag{
+    position: absolute;
+    background: $spotlight-background;
+    padding: 6px 14px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    left: 30px;
+    top: 0px;
+    z-index: 1;
+    letter-spacing: 1px;
+  }
+  & .content{
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    z-index: 999;
+    color: #fff;
+  }
+  & .supplier-review-count{
+    font-size: 12px;
+    padding-left: 10px;
+  }
+  & button {
+    text-transform: uppercase;
+    font-size: 11px;
+    padding: 8px 15px;
+    letter-spacing: 2px;
+    box-shadow: 0px 3px 0 0 $button-shadow;
+  }
+  & h3{
+    color: #fff;
+    font-size: 18px
+  }
+  & i.save{
+    color: #fff;
+    font-size: 18px
+  }
+  .btn-reset {
+    background-color:transparent;
+    border:none;
+    width:auto;
+    height:auto;
+    padding:0;
+    &:hover,
+    &:focus{
+      background-color:transparent;
+      border:none;
+    }
+  }
+  .add-to-shortlist {
+    box-shadow: none;
+    i.fa-heart-o {
+      font-size:25px;
+    }
+    a {
+      color:$brand-primary;
+      font-size:12px;
+    }
+  }
+  .added-to-shortlist {
+    color:$brand-primary!important;
+    box-shadow: none;
+    i {
+      color:$brand-primary!important;
+      box-shadow: none;
+    }
+  }
+
+}
+
+.supplier-premium {
+  background: $listing-background;
+
+  & .owl-nav {
+    padding: 0px;
+  }
+
+  & .owl-nav .owl-prev {
+    display: block;
+    height: 40px;
+    position: absolute;
+    top: 44%;
+    width: 30px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0px 12px;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  & .owl-nav .owl-next {
+    display: block;
+    height: 40px;
+    position: absolute;
+    top: 44%;
+    width: 30px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0px 12px;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  & .owl-carousel.owl-loaded {
+    padding: 0;
+  }
+
+  & .parent {
+    position: relative;
+  }
+
+  & .overlay {
+    background-image: linear-gradient(to bottom, transparent, black);
+    width: 100%;
+    height: 25%;
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+.supplier-priority {
+  & .parent {
+    position: relative;
+  }
+
+  & .parent img{
+    width: 100%;
+  }
+
+  & .overlay {
+    background-image: linear-gradient(to bottom, transparent, black);
+    width: 100%;
+    height: 25%;
+    position: absolute;
+    bottom: 0;
+  }
+
+}
+
+
+.ew-directory {
+  h1,
+  h1 span,
+  h1 span > a {
+    color: $primary-text !important;
+    font-weight: 300;
+    font-size: 36px;
+    margin: 30px 0;
+  }
+  h1 a {
+    text-decoration: underline;
+  }
+
+  button:focus {
+    outline: 0 !important;
+  }
+
+
+
+  .dropdown-menu a {
+    text-decoration: none;
+  }
+
+  .navbar-filter {
+    text-transform: uppercase;
+    border: none;
+
+  }
+
+  .navbar-collapse {
+    padding: 0;
+  }
+
+  .navbar-nav {
+    margin: 0;
+  }
+
+  .navbar-filter li {
+    background: $filters-background;
+  }
+
+  .navbar-filter .navbar-nav > li > a {
+    padding: 19px;
+  }
+  .navbar-filter .navbar-nav > li > a i {
+
+  }
+  .navbar-filter span {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 0 20px;
+  }
+  .navbar-filter li {
+    font-size: 13px;
+    font-weight: 600;
+    border-right: solid 5px #fff;
+  }
+  .navbar-filter li.gridview {
+    border-left: solid 5px #fff;
+  }
+  .navbar-filter .nav > li > a:focus,
+  .navbar-filter .nav > li > a:hover {
+    text-decoration: none;
+    background-color: $button-filter-active;
+  }
+  .navbar-filter a {
+    color: $primary-text;
+    letter-spacing: 2px;
+  }
+  .navbar-filter .btn-filter {
+    color: $primary-text;
+    background-color: $button-filter;
+    border: $button-filter-border solid 1px;
+    border-radius: 2px;
+    box-shadow: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin: 10px 0;
+  }
+  .navbar-filter .btn-filter:hover,
+  .navbar-filter .btn-filter.active,
+  {
+    color: #fff;
+    background-color: $button-filter-active;
+    border: $button-filter-active solid 1px;
+  }
+
+  /* Typography */
+  .text-default {
+    color: $primary-text;
+  }
+
+  /*Buttons*/
+  .btn-default {
+    background-color:$default-button;
+    border:1px solid $default-button-border;
+  }
+  .btn-default:hover {
+    background-color: darken($default-button, 5%);
+    border:1px solid darken($default-button-border,5%);
+  }
+
+  .btn-white {
+    background-color:#fff;
+    border:1px solid $default-button-border;
+  }
+
+  .btn-white:hover {
+    color:$brand-primary;
+  }
+
+  /* Centering stuff */
+  .v-center {
+    @include v-center;
+  }
+
+  .v-h-center {
+    @include v-h-center;
+  }
+
+  .results {
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  /*Datepicker*/
+  .bootstrap-datetimepicker-widget .table-condensed > thead > tr > th,
+  .bootstrap-datetimepicker-widget .table-condensed > tbody > tr > th,
+  .bootstrap-datetimepicker-widget .table-condensed > tfoot > tr > th,
+  .bootstrap-datetimepicker-widget .tabe-condensed > thead > tr > td,
+  .bootstrap-datetimepicker-widget .table-condensed > tbody > tr > td,
+  .bootstrap-datetimepicker-widget .table-condensed > tfoot > tr > td {
+    padding: 5px;
+  }
+
+  .bottom-nav {
+    a {
+      background-color: $bg-grey;
+      padding: 15px;
+      width: 160px;
+      font-size:12px;
+      border: 1px solid transparent;
+      color: $text-muted;
+      text-align:center;
+      &:hover {
+        i {
+          color: $text-muted;
+        }
+      }
+      @media(min-width:768px) {
+        width:210px;
+        font-size:14px;
+      }
+    }
+  }
+
+  .bootstrap-datetimepicker-widget .active {
+    background-color: $brand-primary !important;
+  }
+
+  /*colorful container*/
+  .grey-container {
+    @include colorful-background($bg-grey, 2rem);
+  }
+
+  /* Google Map*/
+  #map {
+    min-height:400px;
+    margin-top:25px;
+    position:relative;
+  }
+
+  /* UI enhancement kits */
+  .toggle-smoother {
+    overflow: auto;
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+  }
+
+
+
+  .owl-nav {
+    padding: 0px;
+    .owl-prev,
+    .owl-next {
+      display: block;
+      height: 40px;
+      position: absolute;
+      top: 44%;
+      width: 30px;
+      background: $brand-primary;
+      padding: 0px 12px;
+      color: #fff
+    }
+    .owl-prev {
+      left: 0;
+    }
+    .owl-next {
+      right: -1px;
+    }
+  }
+
+
+  // inline forms
+
+  & .form-group{
+    margin-bottom: 0;
+  }
+
+  & .date-label{
+    top: 0!important;
+  }
+
+  & .inline-label{
+    position: relative;
+  }
+
+  & .inline-label label {
+    position: absolute;
+    top: 15px;
+    font-size: 80%;
+    color: #555;
+    z-index: 100;
+    font-weight: bold;
+    padding: 6px 10px;
+  }
+
+  & .inline-label .form-control{
+    padding-top: 24px;
+    height: auto;
+  }
+
+  & .inline-label .form-control:focus{
+    box-shadow: none;
+  }
+
+  & .inline-label .form-control:focus + label{
+    // color: #29abe9;
+  }
+
+  & .inline-group{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+  }
+  & .inline-group>.inline-item {
+    display: table-cell;
+    float: none;
+    width:auto;
+    margin-left:-1px;
+  }
+  & .inline-group>select.inline-item,.inline-group>.btn.inline-item{
+    margin-bottom:2px;
+  }
+  & .inline-group>.inline-item:first-child:not(:last-child){
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-left:0;
+  }
+  & .inline-group>.inline-item:not(:first-child):not(:last-child){
+    border-radius:0;
+  }
+  & .inline-group>.inline-item:last-child:not(:first-child){
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  & .inline-group>.inline-item:last-child:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+
+}
+
+.hover-content {
+  overflow: hidden;
+  position: relative;
+  border: 2px solid #e6e6e6;
+  margin: 20px 0;
+  border-radius: 10px;
+  &.current{
+    border: 2px solid #ed1e79;
+  }
+  .alert-success{
+    width: 100%;
+    text-align: center;
+    display: block;
+    min-height: 160px;
+    padding: 20px 0;
+     i{
+       font-size: 35px;
+       color: #8cc63f;
+     }
+    p span{
+      font-size: 20px;
+      position: relative;
+      display: inline-block;
+      top: -3px;
+    }
+    p.subtitle{
+      font-size: 14px;
+      margin-top: -10px;
+    }
+  }
+}
+
+.visible-part,
+.hidden-part {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background: #fff;
+}
+.visible-part {
+  cursor: pointer;
+  -webkit-transform: perspective(500px) rotateY(0deg);
+  transform: perspective(500px) rotateY(0deg);
+  padding: 45px 40px 45px 25px;
+  margin-left: 0;
+  border-radius: 10px;
+  width: 100%;
+  .mid{
+    padding-right: 100px;
+  }
+  &.spotlight{
+    padding: 115px 40px 115px 25px;
+  }
+  &.start{
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+  .box{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 0;
+    width: 0;
+    cursor: pointer;
+    border-right: 50px solid rgba(20, 121, 119, 0.6);
+    border-bottom: 50px solid rgba(20, 121, 119, 0.6);
+    border-left: 50px solid transparent;
+    border-top: 50px solid transparent;
+    p{
+      -webkit-transform: rotate(313deg);
+      transform: rotate(313deg);
+      -webkit-transform: rotate(313deg);
+      -moz-transform: rotate(313deg);
+      -o-transform: rotate(313deg);
+      -ms-transform: rotate(313deg);
+      margin-top: 15px;
+      color: white;
+      text-transform: uppercase;
+    }
+  }
+  button{
+    width: 35%;
+    margin-top: 15px;
+  }
+}
+.hidden-part {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: text;
+  -webkit-transform: perspective(500px) rotateY(180deg);
+  transform: perspective(500px) rotateY(180deg);
+  border-radius: 10px;
+  &.start{
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+  .box{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 0;
+    width: 0;
+    cursor: pointer;
+    border-right: 25px solid rgba(20, 121, 119, 0.6);
+    border-bottom: 25px solid transparent;
+    border-left: 25px solid transparent;
+    border-top: 25px solid rgba(20, 121, 119, 0.6);
+    p{
+      position: absolute;
+      top: -26px;
+      right: -15px;
+      color: white;
+      font-size: 16px;
+    }
+  }
+}
+.hover-content:hover {
+  /* visible-part (current) will be hidden */
+  /* hidden-part (current) will be visible */
+}
+//.hover-content:hover .visible-part {
+//  opacity: 0;
+//  -webkit-transform: perspective(500px) rotateY(-180deg);
+//  transform: perspective(500px) rotateY(-180deg);
+//}
+//.hover-content:hover .hidden-part {
+//  opacity: 1;
+//  -webkit-transform: perspective(500px) rotateY(0deg);
+//  transform: perspective(500px) rotateY(0deg);
+//}
+
+.circle-grey{
+  background-color: grey;
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  color: white;
+  text-align: center;
+  padding-top: 26%;
+  font-size:12px;
+  span{
+    font-size: 18px;
+    margin: 5px;
+    display: inline-block;
+  }
+}
+
+

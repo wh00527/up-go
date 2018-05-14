@@ -1,0 +1,123 @@
+.ew-image-uploader {
+  border-style: dashed !important;
+  @include v-h-center;
+  background-color:$grey-bg;
+  &:hover{
+    border-color:$brand-primary;
+  }
+  .inner-container {
+    overflow:hidden;
+  }
+  span {
+    font-size:16px; 
+    color:#444; 
+    margin-top:10px; 
+    margin-right:10px;
+  }  
+  &.dz-started {
+    .preview-text {
+      display:block;
+    }
+  }
+  .preview-text{
+    display:none;
+  }
+
+}
+
+.uploaded-images{
+  border:4px solid transparent;
+  overflow: hidden;
+  position:relative;
+  img {
+    transition: all 1s ease-in-out;
+  }  
+  &:hover {
+    border-color:$brand-primary;
+    .image-edit-tool-bar {
+      transition: all .5s ease-in-out;
+      width:40px;
+      z-index: 10;
+      .button-wrapper {
+        position:relative;
+        height:100%;
+      }
+      
+      i {
+        transition: all 1s ease-in-out;
+        color:#fff;
+        margin-left:10px;
+        cursor:pointer;
+        position:absolute;
+      }
+      .fa-pencil-square-o {         
+        top:20px;
+      }
+      .fa-trash-o {
+        bottom:20px;
+      }
+    }
+    img {
+      border-color:$brand-primary;
+      transform: scale(1.1); 
+    }
+  }
+
+  .image-edit-tool-bar {
+    position:absolute;
+    left:0;
+    top:0;
+    height:100%;
+    width:0;
+    background: rgba(0,0,0,.3);
+    i {
+      color:transparent;
+      font-size:20px;
+      display:block;
+      margin-left:-20px;
+    }
+  }
+}
+
+#image-uploader-modal {
+  .image-editor {
+    @include general-widget-style ($brand-primary, $widget-header-margin-bottom);
+    padding-left:0;
+    .modal-content {
+      border:0;
+      #upload-image-step-2 {
+        max-width:453px !important;
+        label {
+          margin-top:8px;
+          color:#fff;
+          font-weight: 300;
+        }
+        .form-control {
+          width:70%;
+          background-color:$grey-bg;
+          margin-bottom:0;
+        }            
+      }
+    }
+  }
+  .button-container {
+    @include v-h-center;
+    background-color:$black;
+    border-top:1px solid $grey-second-dark; 
+  }
+  .image-info {
+    background-color:$grey-bg;
+  }
+  #upload-image-step-2 {
+    display:none;
+  }
+  .suggested-tags {
+    background-color:#fff;
+    border:1px solid $grey-seperator;
+    .tags {
+      background-color:$grey-bg;
+      border-radius: 8px;
+      margin:5px;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@mixin v-center {
+  display:flex;
+  align-items:center;
+}
+
+@mixin v-h-center {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}

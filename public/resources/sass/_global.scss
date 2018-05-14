@@ -1,0 +1,138 @@
+//
+//#################################################
+// Global Style
+//#################################################
+//
+
+$body-padding-left: 3.3rem;
+
+body {
+  font-family:$font-family-base;
+}
+.two_columns {
+  background-color:#000;
+}
+
+.wrapper.white-bg{
+  min-height:630px;
+}
+.wrapper-content {
+  width:100%;
+  padding:3.3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+p {
+  font-size: 13px;
+  line-height: 1.5 * $font-size-root;
+  padding: 10px 0;
+  color:$grey-second-dark;
+  font-weight:300;
+}
+
+hr {
+  border-top: 1px solid $grey-seperator;
+}
+.grey-section {
+  background-color:$grey-bg;
+  padding:40px;
+}
+.form-error {
+  @extend .text-primary
+}
+
+.control-label {
+  padding: 10px;
+  font-weight: 400;
+  font-size: 12px;
+  color: #957c67;
+}
+
+.p-static {
+  position:static;
+}
+
+.display-i-block {
+  display:inline-block;
+}
+
+.v-center {
+   @include v-center;
+}
+.v-h-center {
+  @include v-h-center;
+}
+
+.show {
+  transition:1s;
+  transform:scale(1);
+}
+
+.hide {
+  transition:1s;
+  transform:scale(0);
+}
+
+.order-form {
+    @include general-widget-style ($brand-primary, $widget-header-margin-bottom);
+    border: 1px solid $brand-primary; 
+    box-shadow:none;
+
+    .order-elements {
+      @include general-widget-style ($grey-seperator, $widget-header-margin-bottom);
+      box-shadow:none;
+      header {
+        h5 {
+          font-size:13px;
+        }
+      }
+      padding:0;
+      margin-top: $spacer;
+      .fa-file-pdf-o {
+        font-size:20px;
+      }
+    }
+}
+
+.border-free {
+  border:none;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-borders {
+  border: none !important;
+}
+
+.no-margins {
+  margin: 0 !important;
+}
+
+.no-top-border {
+  border-top: 0 !important;
+}
+
+.light-blue{
+  color: #3ABDFC
+}
+
+.p-t-5px {
+  padding-top:5px;
+}
+
+.p-b-5px {
+  padding-bottom:5px;
+}
+.bg-grey{
+  background-color: #FAFAFA;
+}
+
+
+
+
+
+
+

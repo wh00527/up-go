@@ -1,0 +1,28 @@
+@mixin ew-tooltip {
+  opacity: 1 !important;
+  position: absolute; 
+  // left:200px;
+  z-index: 9999;
+  .tooltip-arrow {
+    display:none !important;
+  }
+  .tooltip-inner {
+    @include box-shadow-no-param;
+    width:auto;
+    max-width: 300px;
+    @include media-breakpoint-up(md) {
+      max-width:500px;
+    }
+    font-size:12px;
+    background-color: #fff !important;
+    color:$grey-text;
+    text-align: left;
+    border-radius: 5px;
+    padding: $spacer * 1;  
+    ul {
+      margin-top:$spacer;
+      list-style-type:disc; 
+      padding-left:15px;
+    }
+  }    
+}

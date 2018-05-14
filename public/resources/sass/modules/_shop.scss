@@ -1,0 +1,27 @@
+
+.crm-shop-widget {
+  margin-top:40px;
+  &.tab-adjustment {
+    margin-top:-4px;
+    position:relative;
+    z-index:2;
+  }
+  
+  #businessname {
+    border: none;
+    pointer-events: none;
+    background-color: #f7f7f9;
+    color: #444;
+  }
+
+  .big-width {
+    width:66.6%;
+  }
+  .small-width {
+    width:16.7%;
+  } 
+}
+
+
+
+

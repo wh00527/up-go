@@ -1,0 +1,67 @@
+/* These mixins are for general widegt styles such as general paddings 
+    and background-color and ....
+*/
+
+@mixin general-widget-style ($widget-color, $margin-bottom){
+  background-color:#fff;
+  padding:40px;
+  margin-bottom: 25px;
+  text-align: left;
+  //@include box-shadow-no-param;
+
+  h5 {
+    display: inline-block;
+    font-size: 18px;
+    font-weight:600;
+    padding: 0 0 4px 0;
+    text-overflow: ellipsis;
+    text-transform:uppercase;
+  }
+  .header {
+    border-bottom:2px solid $widget-color;
+    padding-bottom:10px;
+    margin-bottom: $margin-bottom; // @Shawnee - We'll need to talk about this one! too much margin when combined with content block - // margin-bottom:30px;
+    text-align:left;
+    a {
+      display:inline-block;
+      float:right;
+      margin-top:3px;
+      font-size:10px;
+      color:#4d4d4d;
+      text-transform:uppercase;
+    }
+  }
+
+  .header p {
+      padding: 10px 0;
+  }
+  .btn.submit {
+    background-color:$widget-color;
+    color:#fff;
+    margin-top: 40px;
+    margin-bottom: 0px;
+    width: 213px;
+    height: 40px;
+  }
+  .content {
+    color: inherit;
+    padding: 15px 0 20px 0;
+    border: none;
+    font-size: 12px;
+    .content-hidden {
+      background: $gray-lightest;
+    }
+  }
+  .content.content-placeholder {
+      padding: 50px;
+      background: $gray-lightest;
+      text-align: center;
+  }
+}
+
+/* colorful container */
+
+@mixin colorful-background ($background-color,$padding) {
+  background-color:$background-color;
+  padding:$padding;
+}

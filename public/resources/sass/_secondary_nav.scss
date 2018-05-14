@@ -1,0 +1,48 @@
+/* Secondary Nav */
+
+.secondary-nav {
+  background-color: $brand-primary;
+  height:40px;
+  text-align:center;
+  box-shadow:0px 3px 3px 0px rgba(0,0,0,0.25);
+  margin-left: -0.9375rem;
+  margin-right: -0.9375rem;
+  ul{
+    display:inline-block;
+    width:auto;
+  }
+  li {
+    display:inline-block;
+    height:40px;
+    color:#fff;
+    font-weight:500;
+    opacity:.8;
+    font-size:11px;
+    letter-spacing: 2px;
+    border-bottom:2px solid transparent;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover,
+    &.active{
+      border-color:#fff;
+      opacity:1;
+    }
+
+  }
+  li > a {
+    color: #FFFFFF;
+    text-decoration: none;
+    display:inline-block;
+    padding-top:15px;
+    padding-left:15px;
+    padding-right:15px;
+    height:100%;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    margin-left:-30px;
+    margin-right:-9px;
+  }
+}

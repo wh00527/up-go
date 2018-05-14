@@ -1,0 +1,87 @@
+//
+//#################################################
+// CRM stats charts 
+//#################################################
+//
+
+@mixin circles($section-color, $border-color){
+  width:125px;
+  height:125px;
+  border:3px solid $border-color;
+  border-radius:100px;
+  color:$section-color;
+  .title{
+    font-size:10px;
+  }
+  .number {
+    font-size:28px;
+  }
+  i {
+    font-size:24px;
+  }
+}
+
+.crm-activities-widget {
+  background-color:#fff;
+  @include general-widget-style($brand-activities, 30px);
+  text-align: center;
+  .overview {
+    position:relative;
+    hr {
+      position:absolute;
+      top: 49px;
+      width: 90%;
+      margin-left:50px;
+      border-top:3px solid #e6e6e6;
+      @include media-breakpoint-down(lg){
+        display:none;
+      }
+    }
+  };
+
+  .card-block {
+    @include circles(#444, transparent);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    p{
+      font-size:21px;
+    }
+    &.listing-reviews {
+      @include circles($brand-activities-listing,$brand-primary);
+    }
+    &.website-clicks {
+      @include circles($brand-activities-clicks,$brand-activities-clicks-light);
+    }
+    &.saves {
+      @include circles($brand-activities-saves, $brand-activities-saves-light);
+    }
+    &.enquiries {
+      @include circles($brand-activities-enquiries,$brand-activities-enquiries-light);
+    }
+    &.reviews {
+      @include circles($brand-activities-reviews,$brand-activities-reviews-light);
+    }
+  }
+
+  #linechart{
+    svg {
+      z-index: 5;
+    }
+  }
+  .morris-hover.morris-default-style {
+    height:100%;
+    width:50px;
+    background-color:#ebf6fd;
+    border-radius:0;
+    border:none;
+    z-index:0;
+    .morris-hover-row-label,
+    .morris-hover-point {
+      display:none !important;
+    }
+  }
+}
+
+

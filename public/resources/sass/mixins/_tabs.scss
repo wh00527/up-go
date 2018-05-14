@@ -1,0 +1,33 @@
+@mixin ew-tabs ($number_of_items) {
+  .nav-item {
+    width: 96% / $number_of_items;
+    background-color:$grey-bg;
+
+    &.active {
+      border:none;
+      background:$brand-primary;
+      color:#fff;
+      .nav-link {
+        color:#fff;
+      }
+    }
+    .nav-link {
+      border:none;
+      color:$gray-dark;
+      padding: 10px 12px;
+      font-size:12px;
+      font-weight:300;
+      text-align:center;
+      &:hover {
+        background-color:$brand-primary;
+        color:#fff;
+      }
+      &.active {
+        border:none;
+        background:$brand-primary;
+        
+      }
+
+    }   
+  }
+}

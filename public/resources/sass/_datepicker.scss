@@ -1,0 +1,63 @@
+.bootstrap-datetimepicker-widget .table-condensed>thead>tr>th,
+.bootstrap-datetimepicker-widget .table-condensed>tbody>tr>th,
+.bootstrap-datetimepicker-widget .table-condensed>tfoot>tr>th,
+.bootstrap-datetimepicker-widget .tabe-condensed>thead>tr>td,
+.bootstrap-datetimepicker-widget .table-condensed>tbody>tr>td,
+.bootstrap-datetimepicker-widget .table-condensed>tfoot>tr>td {
+  padding: 5px;
+}
+
+.bootstrap-datetimepicker-widget .active {
+  background-color: $brand-primary!important;
+}
+
+.datepicker i {
+  position: absolute;
+  bottom: 10px;
+  z-index: 10;
+  font-size: 16px;
+  right: 10px;
+  color: #000;
+  top: auto;
+  cursor: pointer;
+}
+
+/* Include date range */
+
+.daterangepicker {
+  td {
+    padding:10px;
+  }
+  .ranges {
+    li {
+      padding:10px;
+      color:$grey-text;
+      &:hover,
+      &:focus,
+      &.active{
+        color:#fff;
+        background-color:$brand-primary;
+        border-color:$brand-primary;
+      }
+    }
+  }
+  .range_inputs {
+    button {
+      width:45%;
+      float:left;
+      &:last-child {
+        float:right;
+      }
+    }
+  }
+}
+.daterangepicker td.active, 
+.daterangepicker td.active:hover {
+  background-color:$brand-primary;
+}
+.daterangepicker .daterangepicker_input i {
+  top:10px;
+}
+.daterangepicker td.start-date {
+  border-radius:4px;
+}

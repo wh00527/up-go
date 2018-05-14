@@ -1,0 +1,42 @@
+@mixin marketing-review-widget($width, $color-scheme, $background-color){
+    border:2px solid $color-scheme;
+    background-color:$background-color;
+    width:$width;
+    max-width:320px;
+    min-width:180px;
+    padding-top:10px;
+    margin-bottom:20px;
+    
+    img {
+      margin-bottom:25px;
+      width:100%;
+      @include media-breakpoint-up(md){
+        wwidth:auto;
+      }
+    }
+    .ew-rating-stars {
+      font-size:2rem;
+    }
+    p {
+      font-size:1rem;
+      text-transform: uppercase;
+      @include media-breakpoint-up(md) {
+        font-size:16px;
+      }
+    }
+    button {
+      margin-bottom:0;
+    }
+    .bottom {
+      height:50px;
+      border-radius:0;
+      margin-bottom:0;
+      margin-top:15px;
+      display: flex;
+      background-color:$color-scheme;
+      color:#fff;
+      font-size:16px;
+      align-items: center;
+      justify-content: center;
+    }
+}

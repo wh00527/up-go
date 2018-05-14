@@ -1,0 +1,139 @@
+.width-180 {
+   @include marketing-review-widget (180px,auto,transparent);
+}
+
+.width-210 {
+   @include marketing-review-widget (210px,auto,transparent);
+  .ew-widget-logo{
+    width:100%;
+  }
+  .ew-widget-stars{
+    width:100%;
+  }
+  .ew-widget-reviews{
+    height: 120px;
+    span{
+      top:70px;
+    }
+  }
+  .ew-banner1{
+    width:240px;
+  }
+}
+.width-216 {
+   @include marketing-review-widget (216px,auto,transparent);
+  .ew-widget-logo{
+    width:100%;
+  }
+  .ew-widget-stars{
+    width:100%;
+  }
+  .ew-widget-reviews{
+    height: 120px;
+    span{
+      top:70px;
+    }
+  }
+  .ew-banner1{
+    width:216px;
+  }
+}
+.width-240 {
+   @include marketing-review-widget (240px, auto,transparent);
+  .ew-widget-logo{
+    width:100%;
+  }
+  .ew-widget-stars{
+    width:100%;
+  }
+  .ew-widget-reviews{
+    height: 120px;
+    span{
+      top:70px;
+    }
+  }
+  .ew-banner1{
+    width:240px;
+  }
+}
+.width-300 {
+   @include marketing-review-widget (300px, auto,transparent);
+  .ew-widget-logo{
+    width:60%;
+  }
+  .ew-widget-stars{
+    width:38%;
+  }
+  .ew-widget-reviews{
+    height: 90px;
+    span{
+      top:50px;
+    }
+  }
+  .ew-banner1{
+    width:300px;
+  }
+}
+.width-320 {
+   @include marketing-review-widget (320px, auto,transparent);
+  .ew-widget-logo{
+     width:60%;
+  }
+  .ew-widget-stars{
+    width:38%;
+  }
+  .ew-widget-reviews{
+    height: 90px;
+    span{
+      top:50px;
+    }
+  }
+  .ew-banner1{
+    width:320px;
+  }
+}
+
+
+
+.default {
+  @include marketing-review-widget (none,#eaeaea,$body-bg);
+  .ew-widget-btnCTA a{
+    background-color: #eaeaea;
+    color: #444444;
+  }
+}
+
+.dark-pink{
+   @include marketing-review-widget (none,$brand-primary,$body-bg);
+  .ew-widget-btnCTA a{
+    background-color: #e63077;
+    color: #ffffff;
+  }
+}
+
+.mono {
+   @include marketing-review-widget (none,$mono,$body-bg);
+  .ew-widget-btnCTA a{
+    background-color: #444444;
+    color: #ffffff;
+  }
+}
+
+.grey-black {
+   @include marketing-review-widget (none,$marketing-review-widget-grey,$mono);
+   p {
+     color:$marketing-review-widget-grey;
+   }
+   a {
+     color:#fff;
+   }
+  .ew-widget-btnCTA a{
+    background-color: #808080;
+    color: #ffffff;
+  }
+}
+
+
+
+
+

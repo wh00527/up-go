@@ -1,0 +1,35 @@
+.text-default {
+  color:$mono;
+}
+
+.text-grey {
+  color:$grey-text;
+}
+
+.text-success {
+  color:$state-success-text !important;
+}
+
+.text-info {
+  color:$state-info-text !important;
+}
+
+.text-warning {
+  color:$state-warning-text !important;
+}
+.text-danger {
+  color:$state-danger-text !important;
+}
+
+p {
+  color:$grey-second-dark;
+}
+
+.bold-black {
+  font-weight:bold;
+  color:#000;
+}
+
+.headings-font-weight {
+  font-weight:$headings-font-weight;
+}

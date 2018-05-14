@@ -1,0 +1,33 @@
+.footer {
+  background:#F3F4F4;
+  padding: 5% 10%;
+  margin-left:0;
+  margin-left:-0.9375rem;
+  margin-right:-0.9375rem;
+  
+  h5 {
+    font-size:14px;
+    color:$brand-primary;
+  }
+  
+  li {
+    padding-top:10px;
+    list-style-type:none;
+  }
+  a {
+    color:#fff;
+    text-align: left;
+    font-size:12px;
+    font-weight: 200;
+    margin-top: 10px !important;
+  }
+
+  .social-icons {
+    float:left;
+    margin-right:10px;
+    i{
+      font-size:20px;
+      color:$grey-second-dark;
+    }    
+  }
+}

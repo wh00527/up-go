@@ -1,0 +1,64 @@
+//
+//#################################################
+// /dashboard/ module specific styles
+//#################################################
+//
+
+#page-wrapper {
+  background-color: $grey;
+  width:100%;
+  // padding-bottom:30px;
+  @include media-breakpoint-up(md){
+      width:auto;
+  }
+}
+.row.wrapper {
+  @include media-breakpoint-up(md){
+    padding-left:$body-padding-left;
+  }
+}
+
+.icon-primary-nav {
+  font-size: 25px;
+}
+
+.navbar-default .nav > li > a:hover, .navbar-default .nav > li > a:focus {
+  text-decoration: none;
+}
+.status-all{
+  height: 100%;
+  width: 100%;
+  li{
+    margin: 5% 0;
+    width: 20%;
+    text-align: center;
+    font-size: 14px;
+    span{
+      font-size: 22px;
+      font-weight: 600;
+    }
+    label{
+      display: block;
+      color: black;
+    }
+  }
+}
+.dash-container{
+  border: 1px solid #E9E9E9;
+  padding: 20px;
+  height: 100%;
+  margin-bottom: 5%;
+  h5{
+    color:#00BAFC;
+    font-size: 20px;
+    margin-bottom: 3%;
+  }
+  .blue{
+    color: #3ABDFC;
+  }
+  span{
+    display: block;
+    margin-bottom: 2%;
+  }
+
+}

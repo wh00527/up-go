@@ -1,0 +1,36 @@
+@mixin step_boxes {  
+  background-color:$grey-bg;
+  padding:$spacer * 3; 
+  margin-bottom: $spacer * 3;
+  @include box-shadow-no-param;
+  &.completed {
+    .fa-check-circle-o {
+      display:none;
+    }
+    span {
+      color:$state-success-text;      
+      margin-left: -6px;
+    }
+    .fa-check-circle {
+      display:inline-block !important;
+    }
+  }
+  p {
+    font-size:16px;
+    padding:0;
+    &.title {
+      @include v-center;
+    }    
+    span {
+      margin-right:15px;
+    }
+  }
+  
+  .fa-info-circle {
+     font-size:30px;
+  }
+  
+  label {
+     margin-top:0;
+  }
+}

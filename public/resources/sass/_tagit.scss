@@ -1,0 +1,32 @@
+ul.tagit {
+  padding-top:5px;
+  padding-bottom:5px;
+  border:1px solid $grey-seperator;
+  background-color:#fff;
+  :hover {
+    transition:0.5s;
+    border-color:$grey-darkest;
+  }
+}
+ul.tagit li.tagit-choice .tagit-close {
+  top:55%;
+}
+ul.tagit li.tagit-choice .tagit-label:not(a) {
+  font-size:14px;
+}
+ul.tagit li.tagit-choice-editable {
+  padding: 1em 2rem 1rem 1rem;
+  background-color:#fff;
+  border:1px solid $grey-seperator;
+  text-transform: uppercase;
+  line-height:1;
+  border-radius:8px;
+  font-weight:500;
+  &:hover {
+    background-color:darken(#fff,5%);
+  }
+}
+ul.tagit li.tagit-choice:hover, 
+ul.tagit li.tagit-choice.remove {
+  border-color: darken($grey-seperator, 5%);
+}
