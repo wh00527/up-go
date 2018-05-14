@@ -1,30 +1,20 @@
-<?php namespace App\Modules\Dashboard\Controllers;
+<?php namespace App\Modules\Homepage\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
-use Session;
-use Redirect;
 
-
-class DashboardController extends Controller {
+class HomepageController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-
-    public function __construct(){
-        $value = Session::get('currentUserId');
-        if(!$value){
-            Redirect::to('user')->send();
-        }
-
-    }
-
-	public function index(){
-		return view("dashboard::index");
+	public function index()
+	{
+		return view("homepage::index");
 	}
 
 	/**

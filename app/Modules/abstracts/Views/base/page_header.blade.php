@@ -1,28 +1,17 @@
-<div class="row wrapper border-bottom white-bg page-heading">
-    <div class="col-lg-10">
-        <h2>
-            {{ str_plural(substr(class_basename(Route::currentRouteAction()), 0,
-                    (strpos(class_basename(Route::currentRouteAction()), 'Controller') -0)
-                ))
-            }}
-            @if(isset($data) && method_exists($data, 'total'))
-                <span>{{ '(' . $data->total() . ')' }}</span>
-            @endif
-        </h2>
-        <ol class="breadcrumb">
-            <li>
-                <a href="/dashboard">Home</a>
-            </li>
-            <li class="active">
-                <strong>
-                    {{ substr(class_basename(Route::currentRouteAction()),
-                        (strpos(class_basename(Route::currentRouteAction()), '@') + 1))
-                    }}
-                </strong>
-            </li>
-        </ol>
+<div class="row wrapper border-bottom page-heading">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 header-sign-up">
+        <h1>
+            Uptrade
+        </h1>
     </div>
-    <div class="col-lg-2">
-
-    </div>
+    <?php if(Session::get('currentUserRole')): ?>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 header-sign-up hidden-sm-down">
+                <?php echo Session::get('currentUserDetails')['firstName'] ?>
+                    <i class="fa fa-sort-desc" aria-hidden="true"></i>
+            </div>
+        <?php else: ?>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 header-sign-up hidden-sm-down">
+                Don't have an account? <a href="/user/signup" class="">Sign up </a>
+            </div>
+    <?php endif; ?>
 </div>

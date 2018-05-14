@@ -23,7 +23,7 @@
             @include('abstracts::base.top_nav')
         @show
         @section('page_heading')
-            @include('abstracts::base.page_heading')
+            @include('abstracts::base.page_header')
         @show
         @section('page_body')
         @show

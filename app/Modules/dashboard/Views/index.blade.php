@@ -1,360 +1,88 @@
-@extends('abstracts::base.2_columns_left_nav_bar')
+@extends('abstracts::base.1_column')
+@section('top_nav')
+    @include('abstracts::base.top_nav')
+@endsection
 @section('page_body')
+
     <div class="wrapper wrapper-content">
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="ibox float-e-margins">
+        <div class="row m-b-3">
+            <div class="col-lg-8 col-md-8 col-xs-12 float-e-margins">
                 <div class="ibox-title">
-                    <span class="label label-success pull-right">Monthly</span>
-                    <h5>Income</h5>
+                    <h5>Welcome xxx xxx name</h5>
                 </div>
-                <div class="ibox-content">
-                    <h1 class="no-margins">40 886,200</h1>
-                    <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
-                    <small>Total income</small>
-                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-12 float-e-margins hidden-sm-down">
+                    <div class="ibox-title">
+                        <span class="pull-left light-blue">Customer service:</span>&nbsp;
+                        (03) 9819 2467
+                    </div>
             </div>
         </div>
-        <div class="col-lg-3">
-            <div class="ibox float-e-margins">
-                <div class="ibox-title">
-                    <span class="label label-info pull-right">Annual</span>
-                    <h5>Orders</h5>
-                </div>
-                <div class="ibox-content">
-                    <h1 class="no-margins">275,800</h1>
-                    <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i></div>
-                    <small>New orders</small>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="ibox float-e-margins">
-                <div class="ibox-title">
-                    <span class="label label-primary pull-right">Today</span>
-                    <h5>Vistits</h5>
-                </div>
-                <div class="ibox-content">
-                    <h1 class="no-margins">106,120</h1>
-                    <div class="stat-percent font-bold text-navy">44% <i class="fa fa-level-up"></i></div>
-                    <small>New visits</small>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="ibox float-e-margins">
-                <div class="ibox-title">
-                    <span class="label label-danger pull-right">Low value</span>
-                    <h5>User activity</h5>
-                </div>
-                <div class="ibox-content">
-                    <h1 class="no-margins">80,600</h1>
-                    <div class="stat-percent font-bold text-danger">38% <i class="fa fa-level-down"></i></div>
-                    <small>In first month</small>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
-    <div class="row">
-    <div class="col-lg-4">
-        <div class="ibox float-e-margins">
-            <div class="ibox-title">
-                <h5>Messages</h5>
-                <div class="ibox-tools">
-                    <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                    </a>
-                    <a class="close-link">
-                        <i class="fa fa-times"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="ibox-content ibox-heading">
-                <h3><i class="fa fa-envelope-o"></i> New messages</h3>
-                <small><i class="fa fa-tim"></i> You have 22 new messages and 16 waiting in draft folder.</small>
-            </div>
-            <div class="ibox-content">
-                <div class="feed-activity-list">
-
-                    <div class="feed-element">
-                        <div>
-                            <small class="pull-right text-navy">1m ago</small>
-                            <strong>Monica Smith</strong>
-                            <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum</div>
-                            <small class="text-muted">Today 5:60 pm - 12.06.2014</small>
-                        </div>
-                    </div>
-
-                    <div class="feed-element">
-                        <div>
-                            <small class="pull-right">2m ago</small>
-                            <strong>Jogn Angel</strong>
-                            <div>There are many variations of passages of Lorem Ipsum available</div>
-                            <small class="text-muted">Today 2:23 pm - 11.06.2014</small>
-                        </div>
-                    </div>
-
-                    <div class="feed-element">
-                        <div>
-                            <small class="pull-right">5m ago</small>
-                            <strong>Jesica Ocean</strong>
-                            <div>Contrary to popular belief, Lorem Ipsum</div>
-                            <small class="text-muted">Today 1:00 pm - 08.06.2014</small>
-                        </div>
-                    </div>
-
-                    <div class="feed-element">
-                        <div>
-                            <small class="pull-right">5m ago</small>
-                            <strong>Monica Jackson</strong>
-                            <div>The generated Lorem Ipsum is therefore </div>
-                            <small class="text-muted">Yesterday 8:48 pm - 10.06.2014</small>
-                        </div>
-                    </div>
-
-
-                    <div class="feed-element">
-                        <div>
-                            <small class="pull-right">5m ago</small>
-                            <strong>Anna Legend</strong>
-                            <div>All the Lorem Ipsum generators on the Internet tend to repeat </div>
-                            <small class="text-muted">Yesterday 8:48 pm - 10.06.2014</small>
-                        </div>
-                    </div>
-                    <div class="feed-element">
-                        <div>
-                            <small class="pull-right">5m ago</small>
-                            <strong>Damian Nowak</strong>
-                            <div>The standard chunk of Lorem Ipsum used </div>
-                            <small class="text-muted">Yesterday 8:48 pm - 10.06.2014</small>
-                        </div>
-                    </div>
-                    <div class="feed-element">
-                        <div>
-                            <small class="pull-right">5m ago</small>
-                            <strong>Gary Smith</strong>
-                            <div>200 Latin words, combined with a handful</div>
-                            <small class="text-muted">Yesterday 8:48 pm - 10.06.2014</small>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-lg-8">
-
-    <div class="row">
-        <div class="col-lg-6">
-            <div class="ibox float-e-margins">
-                <div class="ibox-title">
-                    <h5>User project list</h5>
-                    <div class="ibox-tools">
-                        <a class="collapse-link">
-                            <i class="fa fa-chevron-up"></i>
-                        </a>
-                        <a class="close-link">
-                            <i class="fa fa-times"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="ibox-content">
-                    <table class="table table-hover no-margins">
-                        <thead>
-                        <tr>
-                            <th>Status</th>
-                            <th>Date</th>
-                            <th>User</th>
-                            <th>Value</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td><small>Pending...</small></td>
-                            <td><i class="fa fa-clock-o"></i> 11:20pm</td>
-                            <td>Samantha</td>
-                            <td class="text-navy"> <i class="fa fa-level-up"></i> 24% </td>
-                        </tr>
-                        <tr>
-                            <td><span class="label label-warning">Canceled</span> </td>
-                            <td><i class="fa fa-clock-o"></i> 10:40am</td>
-                            <td>Monica</td>
-                            <td class="text-navy"> <i class="fa fa-level-up"></i> 66% </td>
-                        </tr>
-                        <tr>
-                            <td><small>Pending...</small> </td>
-                            <td><i class="fa fa-clock-o"></i> 01:30pm</td>
-                            <td>John</td>
-                            <td class="text-navy"> <i class="fa fa-level-up"></i> 54% </td>
-                        </tr>
-                        <tr>
-                            <td><small>Pending...</small> </td>
-                            <td><i class="fa fa-clock-o"></i> 02:20pm</td>
-                            <td>Agnes</td>
-                            <td class="text-navy"> <i class="fa fa-level-up"></i> 12% </td>
-                        </tr>
-                        <tr>
-                            <td><small>Pending...</small> </td>
-                            <td><i class="fa fa-clock-o"></i> 09:40pm</td>
-                            <td>Janet</td>
-                            <td class="text-navy"> <i class="fa fa-level-up"></i> 22% </td>
-                        </tr>
-                        <tr>
-                            <td><span class="label label-primary">Completed</span> </td>
-                            <td><i class="fa fa-clock-o"></i> 04:10am</td>
-                            <td>Amelia</td>
-                            <td class="text-navy"> <i class="fa fa-level-up"></i> 66% </td>
-                        </tr>
-                        <tr>
-                            <td><small>Pending...</small> </td>
-                            <td><i class="fa fa-clock-o"></i> 12:08am</td>
-                            <td>Damian</td>
-                            <td class="text-navy"> <i class="fa fa-level-up"></i> 23% </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="ibox float-e-margins">
-                <div class="ibox-title">
-                    <h5>Small todo list</h5>
-                    <div class="ibox-tools">
-                        <a class="collapse-link">
-                            <i class="fa fa-chevron-up"></i>
-                        </a>
-                        <a class="close-link">
-                            <i class="fa fa-times"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="ibox-content">
-                    <ul class="todo-list m-t small-list">
-                        <li>
-                            <a href="#" class="check-link"><i class="fa fa-check-square"></i> </a>
-                            <span class="m-l-xs todo-completed">Buy a milk</span>
-
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 no-padding m-r-3 hidden-sm-down">
+                <div class="ibox float-e-margins bg-grey status-all no-padding">
+                    <ul>
+                        <li class="pull-left"><span class="">180</span>
+                            <br /><br />
+                            <label> Job </label>
+                            Views
                         </li>
-                        <li>
-                            <a href="#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                            <span class="m-l-xs">Go to shop and find some products.</span>
-
+                        <li class="pull-left"><span class="">180</span>
+                            <br /><br />
+                            <label> Live </label>
+                            Jobs
                         </li>
-                        <li>
-                            <a href="#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                            <span class="m-l-xs">Send documents to Mike</span>
-                            <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 mins</small>
+                        <li class="pull-left"><span class="">180</span>
+                            <br /><br />
+                            <label> Jobs </label>
+                            expiring soon
                         </li>
-                        <li>
-                            <a href="#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                            <span class="m-l-xs">Go to the doctor dr Smith</span>
+                        <li class="pull-left"><span class="">180</span>
+                            <br /><br />
+                            <label> Expired </label>
+                            Jobs
                         </li>
-                        <li>
-                            <a href="#" class="check-link"><i class="fa fa-check-square"></i> </a>
-                            <span class="m-l-xs todo-completed">Plan vacation</span>
-                        </li>
-                        <li>
-                            <a href="#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                            <span class="m-l-xs">Create new stuff</span>
-                        </li>
-                        <li>
-                            <a href="#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                            <span class="m-l-xs">Call to Anna for dinner</span>
+                        <li class="pull-left"><span class="">180</span>
+                            <br /><br />
+                            <label> Applicants </label>
                         </li>
                     </ul>
+
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="ibox float-e-margins">
-                <div class="ibox-title">
-                    <h5>Transactions worldwide</h5>
-                    <div class="ibox-tools">
-                        <a class="collapse-link">
-                            <i class="fa fa-chevron-up"></i>
-                        </a>
-                        <a class="close-link">
-                            <i class="fa fa-times"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="ibox-content">
-
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <table class="table table-hover margin bottom">
-                                <thead>
-                                <tr>
-                                    <th style="width: 1%" class="text-center">No.</th>
-                                    <th>Transaction</th>
-                                    <th class="text-center">Date</th>
-                                    <th class="text-center">Amount</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td class="text-center">1</td>
-                                    <td> Security doors
-                                    </td>
-                                    <td class="text-center small">16 Jun 2014</td>
-                                    <td class="text-center"><span class="label label-primary">$483.00</span></td>
-
-                                </tr>
-                                <tr>
-                                    <td class="text-center">2</td>
-                                    <td> Wardrobes
-                                    </td>
-                                    <td class="text-center small">10 Jun 2014</td>
-                                    <td class="text-center"><span class="label label-primary">$327.00</span></td>
-
-                                </tr>
-                                <tr>
-                                    <td class="text-center">3</td>
-                                    <td> Set of tools
-                                    </td>
-                                    <td class="text-center small">12 Jun 2014</td>
-                                    <td class="text-center"><span class="label label-warning">$125.00</span></td>
-
-                                </tr>
-                                <tr>
-                                    <td class="text-center">4</td>
-                                    <td> Panoramic pictures</td>
-                                    <td class="text-center small">22 Jun 2013</td>
-                                    <td class="text-center"><span class="label label-primary">$344.00</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">5</td>
-                                    <td>Phones</td>
-                                    <td class="text-center small">24 Jun 2013</td>
-                                    <td class="text-center"><span class="label label-primary">$235.00</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">6</td>
-                                    <td>Monitors</td>
-                                    <td class="text-center small">26 Jun 2013</td>
-                                    <td class="text-center"><span class="label label-primary">$100.00</span></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="col-lg-6">
-                            <div id="world-map" style="height: 300px;"></div>
-                        </div>
+            <div class="col-lg-3 col-md-3 col-md-sm-3 col-xs-12">
+                <div class="float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Your Account</h5>
+                        <p># <?php echo Session::get('currentUserId') ?></p>
                     </div>
                 </div>
             </div>
+
+
         </div>
-    </div>
-
-    </div>
-
-
-    </div>
+        <h3 class="row m-t-1 m-b-1"> Recent Job Activity </h3>
+        <div class="row">
+            <div class="dash-container col-lg-7 col-md-7 col-xs-12">
+                <h5>Qualified Carpenter needed ASAP. Please only apply</h5>
+                <span>Melbourne, VIC, 3000</span>
+                <span class="blue">2 new connections</span>
+                    <span class="pull-left time-remaining">
+                        27 days remaining
+                    </span>
+                    <span class="pull-right">
+                        8 new views
+                    </span>
+            </div>
+            <div class="col-lg-1 col-md-1 col-xs-0"></div>
+            <div class="dash-container col-lg-4 col-md-4 col-xs-12">
+                <span class="m-b-2">Ad packs</span>
+                <h4>Post more than 3 jobs in 6 months?</h4>
+                <p>Save with an ad pack</p>
+                <button class="btn btn-block btn-primary m-b-3">Buy an ad pack now</button>
+            </div>
+        </div>
     </div>
 @endsection

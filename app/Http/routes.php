@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return Redirect::route('user.index');
+    return Redirect::route('homepage.index');
 });
 
 Route::get('utility/map', [

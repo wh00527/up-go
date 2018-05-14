@@ -3,15 +3,22 @@
 Route::group(array('module' => 'User', 'namespace' => 'App\Modules\User\Controllers'), function() {
 
 
-    Route::get('user/index', [
+    Route::get('user/login', [
         'uses' => 'UserController@index'
     ]);
+
+    Route::post('user/login', 'UserController@postLogin');
 
     Route::get('user/logout', [
         'uses' => 'UserController@logout'
     ]);
 
-    Route::post('user/login', 'UserController@login');
+    Route::get('user/kevin', [
+        'uses' => 'UserController@kevin'
+    ]);
+
+
+
 
 
     Route::get('user/edit-password', [

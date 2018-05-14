@@ -1,31 +1,33 @@
-<?php namespace App\Modules\Dashboard\Controllers;
+<?php namespace App\Modules\Business\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
-use Session;
-use Redirect;
 
-
-class DashboardController extends Controller {
+class BusinessController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-
-    public function __construct(){
-        $value = Session::get('currentUserId');
-        if(!$value){
-            Redirect::to('user')->send();
-        }
-
-    }
-
-	public function index(){
-		return view("dashboard::index");
+	public function index()
+	{
+		return view("business::index");
 	}
+
+
+    /**
+     * show for get jobs page
+     *
+     * @return Response
+     */
+
+	public function getJobs(){
+
+	    return view("business::jobs");
+    }
 
 	/**
 	 * Show the form for creating a new resource.

@@ -6,7 +6,7 @@
 ### Get Started
 #### Git
 ```Bash
-git clone https://github.com/helin16/properta.git
+git clone https://github.com/wh00527/up-go.git
 ```
 #### PHP Packages
 ```Bash

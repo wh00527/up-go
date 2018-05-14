@@ -37,7 +37,7 @@ class UserController extends Controller
         }
     }
 
-    public function login() {
+    public function postLogin() {
         // Getting all post data
         $data = Input::all();
         // Applying validation rules.
@@ -49,7 +49,7 @@ class UserController extends Controller
         $validator = Validator::make($data, $rules);
         if ($validator->fails()){
             // If validation falis redirect back to login.
-            return Redirect::to('user/index')->withInput(Input::except('password'))->withErrors($validator);
+            return Redirect::to('user/login')->withInput(Input::except('password'))->withErrors($validator);
         }
         else {
             $user = User::checkLogin(Input::get('email'),Hash::make(Input::get('password')));
@@ -64,7 +64,7 @@ class UserController extends Controller
                         'lastName' => $userDetailModel->lastName
                     )
                     ;
-                    $currentUserRole = Role::getCurrentRole($user[0]->role_id)->name;
+                    $currentUserRole = Role::getCurrentRole($user[0]->role_id)->id;
                     Session::put('currentUserDetails', $currentUserDetails );
                     Session::put('currentUserRole', $currentUserRole );
                     return Redirect::to('dashboard');
@@ -85,6 +85,10 @@ class UserController extends Controller
         Session::forget('currentUserId');
         Session::flash('error', 'You successfully logout');
         return Redirect::to('user');
+    }
+
+    public function kevin(){
+       echo 111;exit;
     }
 
     public function editProfile(){
@@ -163,9 +167,9 @@ class UserController extends Controller
     }
 
     public function createUser(){
-        $this->checkCurrentUser();
+        //$this->checkCurrentUser();
         //echo $currentId = Session::get('currentUser');
-        echo Personnel::checkUserAccess();
+        //echo Personnel::checkUserAccess();
         return view('user::createUser');
     }
 
@@ -174,9 +178,6 @@ class UserController extends Controller
         $data = Input::all();
 
         $rules = array(
-            'firstName' => 'required',
-            'lastName' => 'required',
-            'contactNumber' => 'required',
             'email' => 'required|email',
             'password'      => 'min:5|confirmed',
             'password_confirmation' => 'required_with:password|min:5'
