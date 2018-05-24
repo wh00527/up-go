@@ -17,7 +17,7 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
      * @var array
      */
     protected $fillable = ['email','role_id', 'brand_id'];
-    protected $table = 'users';
+    protected $table = 'user';
     /**
      * The attributes excluded from the model's JSON form.
      *
@@ -30,12 +30,17 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
         return $query->paginate($pageSize ?: self::$pageSize);
     }
 
-    protected function checkLogin($email,$password ){
-        $user = DB::table('users')
-            ->leftJoin('passwords', 'users.id', '=', 'passwords.user_id')
-            ->where('users.email', '=', $email)
+    protected function checkLogin($email){
+        $user = DB::table('user')
+            // ->leftJoin('passwords', 'users.id', '=', 'passwords.user_id')
+            ->where('email', '=', $email)
             //->where('passwords.password', '=', $password)
             ->get();
+        return $user;
+    }
+
+    protected function signUp($email,$password,$type){
+        $user = DB::insert('insert into user (email, password,type) values (?, ?, ?)', [$email,$password,$type]);
         return $user;
     }
 
