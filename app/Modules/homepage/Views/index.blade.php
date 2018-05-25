@@ -34,20 +34,21 @@
     </div>
 </div>
 
+{!! Form::open(array('url' => 'user/login')) !!}
 <div class="row homepage-search-container">
     <div class="col-xs-12 col-md-4">
         <fieldset class="form-group text-xs-left has-success-crm">
-            <input type="text" name="MinGuest" data-validation="required" value="" class="form-control valid" placeholder="Keywords">
+            <input type="text" name="title" data-validation="required" value="" class="form-control valid" placeholder="Keywords">
         </fieldset>
     </div>
     <div class="col-xs-12 col-md-4">
         <fieldset class="form-group text-xs-left">
-            <input type="text" name="MaxGuest" data-validation="required" value="" class="form-control" placeholder="Location">
+            <input type="text" name="location" data-validation="required" value="" class="form-control" placeholder="Location">
         </fieldset>
     </div>
     <div class="col-xs-12 col-md-2">
         <fieldset class="form-group text-xs-left">
-            <input type="text" name="MaxGuest" data-validation="required" value="" class="form-control" placeholder="Trade">
+            <input type="text" name="trade" data-validation="required" value="" class="form-control" placeholder="Trade">
         </fieldset>
     </div>
     <div class="col-xs-12 col-md-2">
@@ -56,6 +57,7 @@
         </fieldset>
     </div>
 </div>
+{!! Form::close() !!}
 
 <div class="row homepage-title-container">
     <div class="text-md-center text-xs-center text-lg-center col-xs-12 col-md-4">

@@ -11,6 +11,7 @@ use App\Modules\User\Models\User;
 use App\Modules\User\Models\Role;
 use Session;
 use Hash;
+use Mail;
 use App\Modules\Personnel\Models\Personnel;
 
 
@@ -37,6 +38,40 @@ class UserController extends Controller
         }
     }
 
+    public function sign(){
+        return view('user::index');
+    }
+
+    public function postSign(){
+        $data = Input::all();
+        $rules = array(
+            'email' => 'required|email',
+            'password' => 'required|min:6',
+        );
+        $validator = Validator::make($data, $rules);
+        if ($validator->fails()){
+            return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors($validator);
+        }else{
+            $userinfo = User::checkLogin(Input::get('email'));
+            if($userinfo){
+                return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors('邮箱已注册');
+            }else{
+                $user = User::signUp(Input::get('email'),Hash::make(Input::get('password')),Input::get('type'));
+                if($user){
+                    $userinfo = User::checkLogin(Input::get('email'));
+                    if($userinfo){
+                        Session::put('currentUserId', $userinfo[0]->id);
+                        return Redirect::to('dashboard');
+                    }else{
+                        return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors($validator);
+                    }
+                }else{
+                    return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors($validator);
+                }
+            }
+        }
+    }
+
     public function postLogin() {
         // Getting all post data
         $data = Input::all();
@@ -52,21 +87,20 @@ class UserController extends Controller
             return Redirect::to('user/login')->withInput(Input::except('password'))->withErrors($validator);
         }
         else {
-            $user = User::checkLogin(Input::get('email'),Hash::make(Input::get('password')));
-            //var_dump($user);exit;
+            $user = User::checkLogin(Input::get('email'));
             // login.
             if (count($user) > 0 ) {
                 if( Hash::check(Input::get('password'), $user[0]->password) ){
                     Session::put('currentUserId', $user[0]->id);
-                    $userDetailModel = User::getCurrentUserProfile($user[0]->id);
-                    $currentUserDetails = array(
-                        'firstName' => $userDetailModel->firstName,
-                        'lastName' => $userDetailModel->lastName
-                    )
-                    ;
-                    $currentUserRole = Role::getCurrentRole($user[0]->role_id)->id;
-                    Session::put('currentUserDetails', $currentUserDetails );
-                    Session::put('currentUserRole', $currentUserRole );
+                    // $userDetailModel = User::getCurrentUserProfile($user[0]->id);
+                    // $currentUserDetails = array(
+                    //     'firstName' => $userDetailModel->firstName,
+                    //     'lastName' => $userDetailModel->lastName
+                    // )
+                    // ;
+                    // $currentUserRole = Role::getCurrentRole($user[0]->role_id)->id;
+                    // Session::put('currentUserDetails', $currentUserDetails );
+                    // Session::put('currentUserRole', $currentUserRole );
                     return Redirect::to('dashboard');
                 }else{
                     Session::flash('error', 'Incorrect password combination');
@@ -78,6 +112,19 @@ class UserController extends Controller
                 Session::flash('error', 'Incorrect password combination');
                 return Redirect::back()->withErrors('Incorrect password');
             }
+        }
+    }
+
+    public function sendMail(){
+        $name = 'HaHa';
+        $flag = Mail::send('user::tests',['name'=>$name],function($message){
+            $to = '2427380865@qq.com';
+            $message ->to($to)->subject('测试邮件');
+        });
+        if($flag){
+            echo '发送邮件成功，请查收！';
+        }else{
+            echo '发送邮件失败，请重试！';
         }
     }
 

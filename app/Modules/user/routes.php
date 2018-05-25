@@ -7,6 +7,16 @@ Route::group(array('module' => 'User', 'namespace' => 'App\Modules\User\Controll
         'uses' => 'UserController@index'
     ]);
 
+    Route::get('user/sign-up', [
+        'uses' => 'UserController@sign'
+    ]);
+
+    Route::post('user/sign', 'UserController@postSign');
+
+    Route::get('user/sendMail', [
+        'uses' => 'UserController@sendMail'
+    ]);
+
     Route::post('user/login', 'UserController@postLogin');
 
     Route::get('user/logout', [

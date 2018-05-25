@@ -33,8 +33,12 @@
         <div class="controls">
             <input type="checkbox" name="vehicle" value="Bike"> Remember me
 
-            <a href="/user" class="component_9w5i1l">Forgot password?</a>
+            <a href="/user/sendMail" class="component_9w5i1l">Forgot password?</a>
         </div>
+        <!-- <div class="controls">
+            <input type="radio" name="type" id="" value="1" checked="checked">雇主
+            <input type="radio" name="type" id="" value="2">雇员
+        </div> -->
         <div class="controls">
             <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
 
