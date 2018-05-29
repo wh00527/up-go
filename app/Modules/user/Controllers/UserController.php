@@ -92,6 +92,7 @@ class UserController extends Controller
             if (count($user) > 0 ) {
                 if( Hash::check(Input::get('password'), $user[0]->password) ){
                     Session::put('currentUserId', $user[0]->id);
+                    Session::put('currentUserRole', $user[0]->type);
                     // $userDetailModel = User::getCurrentUserProfile($user[0]->id);
                     // $currentUserDetails = array(
                     //     'firstName' => $userDetailModel->firstName,
@@ -101,7 +102,12 @@ class UserController extends Controller
                     // $currentUserRole = Role::getCurrentRole($user[0]->role_id)->id;
                     // Session::put('currentUserDetails', $currentUserDetails );
                     // Session::put('currentUserRole', $currentUserRole );
-                    return Redirect::to('dashboard');
+                    if($user[0]->type == 1){
+                        return Redirect::to('dashboard');
+                    }else{
+                        echo 2;exit;
+                        return Redirect::to('dashboard');
+                    }
                 }else{
                     Session::flash('error', 'Incorrect password combination');
                     return Redirect::back()->withErrors('Incorrect password');

@@ -40,7 +40,16 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
     }
 
     protected function signUp($email,$password,$type){
-        $user = DB::insert('insert into user (email, password,type) values (?, ?, ?)', [$email,$password,$type]);
+        $user = DB::insert('insert into user (email, password,type,integral) values (?, ?, ?, ?)', [$email,$password,$type,100]);
+        return $user;
+    }
+
+    protected function getUserInfo($id){
+        $user = DB::table('user')
+            // ->leftJoin('passwords', 'users.id', '=', 'passwords.user_id')
+            ->where('id', '=', $id)
+            //->where('passwords.password', '=', $password)
+            ->first();
         return $user;
     }
 

@@ -1,6 +1,6 @@
 <?php if( Session::get('currentUserRole')  ):?>
     <div class="top-menu hidden-sm-down">
-        <?php if(Session::get('currentUserRole') == 2 ):?>
+        <?php if(Session::get('currentUserRole') == 1 ):?>
         <a class="" href="/dashboard">
             Home
         </a>

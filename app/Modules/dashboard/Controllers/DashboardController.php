@@ -5,7 +5,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Session;
 use Redirect;
-
+use App\Modules\User\Models\User;
+use App\Modules\dashboard\Models\Dashboard;
+use Illuminate\Support\Facades\Input;
 
 class DashboardController extends Controller {
 
@@ -24,9 +26,40 @@ class DashboardController extends Controller {
     }
 
 	public function index(){
-		return view("dashboard::index");
+		$value = Session::get('currentUserId');
+		$user = User::getUserInfo($value);
+		// var_dump(Dashboard::get());
+		$rcount = Dashboard::getReleaseCount($value);
+		$vcount = Dashboard::getValidCount($value);
+		$icount = Dashboard::getInvalidCount($value);
+		$acount = Dashboard::getApplyCount($value);
+		$data = Dashboard::getNewestJobs($value);
+		return view("dashboard::index",compact('user','rcount','vcount','icount','acount','data'));
 	}
 
+	public function jobList(){
+		$value = Session::get('currentUserId');
+		$data = Dashboard::getJobList($value);
+		return view("dashboard::index",compact('data'));
+
+	}
+
+	public function jobInfo(){
+		$id = Input::except('id');
+		$data = Dashboard::getJobInfo($id);
+		return view("dashboard::index",compact('data'));
+	}
+
+	public function applicantList(){
+		$value = Session::get('currentUserId');
+		$data = Dashboard::getApplicantList($value);
+		return view("dashboard::index",compact('data'));
+	}
+	public function settings(){
+		$value = Session::get('currentUserId');
+		$user = User::getUserInfo($value);
+		return view("dashboard::index",compact('user'));
+	}
 	/**
 	 * Show the form for creating a new resource.
 	 *
