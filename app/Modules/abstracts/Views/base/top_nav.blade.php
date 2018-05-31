@@ -4,20 +4,20 @@
         <a class="" href="/dashboard">
             Home
         </a>
-        <a class="" href="/business/jobs">
+        <a class="" href="/dashboard/jobs">
             Jobs
         </a>
-        <a class="" href="/business/applicants">
+        <a class="" href="/dashboard/applicants">
             Applicants
         </a>
-        <a class="" href="/business/products">
+        <a class="" href="/dashboard/products">
             Products
         </a>
-        <a class="" href="/user/settings">
+        <a class="" href="/dashboard/settings">
             Settings
         </a>
         <?php else: ?>
-        <a class="" href="/business/applicants">
+        <a class="" href="/dashboard/applicants">
 
         </a>
         <?php endif;?>

@@ -76,6 +76,12 @@ class Dashboard extends Model {
 		return $data;
 	}
 
+	protected function addview($id){
+		DB::table('job')
+            ->where('id', $id)
+            ->increment("view",1);
+	}
+
 	protected function getApplicantList($id){
 		$data = DB::table('job')
             ->leftJoin('apply', 'job.id', '=', 'apply.job_id')
@@ -83,5 +89,10 @@ class Dashboard extends Model {
 			->where('uid', '=', $id)
 			->get();
 		return $data;
+	}
+
+	protected function addJob($data){
+		$user = DB::insert('insert into job (title, trade_type,location,job_type,salary_range,apprentice,summary,description,logo,starttime,endtime,uid) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [$data,$data,$data,$data0]);
+		return $user;
 	}
 }

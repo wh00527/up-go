@@ -41,6 +41,7 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
 
     protected function signUp($email,$password,$type){
         $user = DB::insert('insert into user (email, password,type,integral) values (?, ?, ?, ?)', [$email,$password,$type,100]);
+        // DB::insert('insert into integral (user_id, number,type) values (?, ?, ?)', [$user,100,1]);
         return $user;
     }
 
@@ -51,6 +52,21 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
             //->where('passwords.password', '=', $password)
             ->first();
         return $user;
+    }
+
+    protected function editUserInfo($id,$data){
+        // var_dump($data);exit;
+        DB::table('user')
+            ->where('id', $id)
+            ->update(['company' => $data['company'] , 'address' => $data['address'] , 'billing_address' => $data['billing_address'] , 'phone' => $data['phone'] , 'name' => $data['name']])
+        ;
+    }
+
+    protected function deductint($id){
+        DB::table('user')
+            ->where('id', $id)
+            ->decrement("integral",1);
+        DB::insert('insert into integral (type,number,user_id) values (?, ?, ?)', [1,2,$id]);
     }
 
     protected function findCurrentPassword($id,$password){

@@ -47,6 +47,7 @@ class UserController extends Controller
         $rules = array(
             'email' => 'required|email',
             'password' => 'required|min:6',
+            'type' => 'required',
         );
         $validator = Validator::make($data, $rules);
         if ($validator->fails()){
@@ -61,6 +62,7 @@ class UserController extends Controller
                     $userinfo = User::checkLogin(Input::get('email'));
                     if($userinfo){
                         Session::put('currentUserId', $userinfo[0]->id);
+                        Session::put('currentUserRole', $userinfo[0]->type);
                         return Redirect::to('dashboard');
                     }else{
                         return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors($validator);

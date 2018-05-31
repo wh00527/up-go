@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Session;
 use Redirect;
+use Validator;
 use App\Modules\User\Models\User;
 use App\Modules\dashboard\Models\Dashboard;
 use Illuminate\Support\Facades\Input;
@@ -28,7 +29,6 @@ class DashboardController extends Controller {
 	public function index(){
 		$value = Session::get('currentUserId');
 		$user = User::getUserInfo($value);
-		// var_dump(Dashboard::get());
 		$rcount = Dashboard::getReleaseCount($value);
 		$vcount = Dashboard::getValidCount($value);
 		$icount = Dashboard::getInvalidCount($value);
@@ -40,13 +40,12 @@ class DashboardController extends Controller {
 	public function jobList(){
 		$value = Session::get('currentUserId');
 		$data = Dashboard::getJobList($value);
-		return view("dashboard::index",compact('data'));
-
+		return view("business::jobs",compact('data'));
 	}
 
-	public function jobInfo(){
-		$id = Input::except('id');
+	public function jobInfo($id){
 		$data = Dashboard::getJobInfo($id);
+		Dashboard::addview($id);
 		return view("dashboard::index",compact('data'));
 	}
 
@@ -55,10 +54,99 @@ class DashboardController extends Controller {
 		$data = Dashboard::getApplicantList($value);
 		return view("dashboard::index",compact('data'));
 	}
+
 	public function settings(){
 		$value = Session::get('currentUserId');
 		$user = User::getUserInfo($value);
 		return view("dashboard::index",compact('user'));
+	}
+
+	public function setJob(){
+		$value = Session::get('currentUserId');
+		$user = User::getUserInfo($value);
+		if($user->company && $user->address){
+			return view("dashboard::index",compact('user'));
+		}else{
+			return Redirect::to('dashboard/settings');
+		}
+	}
+
+	public function editUserInfo(){
+		$value = Session::get('currentUserId');
+		$data = Input::all();
+		// $data['company'] = 1;
+		// $data['address'] = 2;
+		// $data['billing_address'] = 3;
+		// $data['phone'] = 4;
+		// $data['name'] = 5;
+		// $rules = array(
+  //           'company' => 'required',
+  //           'address' => 'required|min:6',
+  //       );
+  //       $validator = Validator::make($data, $rules);
+  //       if ($validator->fails()){
+  //           return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors($validator);
+  //       }else{
+        	$user = User::getUserInfo($value);
+        	if($user->type != 1){
+        		return Redirect::to('homepage');
+        	}else{
+        		$datas = array();
+	        	// $datas[''] = $data[''];
+        		$user = User::editUserInfo($value,$datas);
+        		if($user){
+        			// error
+        			return Redirect::to('dashboard/settings');
+        		}else{
+        			// ok
+        			return Redirect::to('dashboard/settings');
+        		}
+        	}
+            // $userinfo = User::checkLogin(Input::get('email'));
+            // if($userinfo){
+            //     return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors('邮箱已注册');
+            // }else{
+            //     $user = User::signUp(Input::get('email'),Hash::make(Input::get('password')),Input::get('type'));
+            //     if($user){
+            //         $userinfo = User::checkLogin(Input::get('email'));
+            //         if($userinfo){
+            //             Session::put('currentUserId', $userinfo[0]->id);
+            //             return Redirect::to('dashboard');
+            //         }else{
+            //             return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors($validator);
+            //         }
+            //     }else{
+            //         return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors($validator);
+            //     }
+            // }
+        // }
+	}
+
+	public function addJob(){
+		$value = Session::get('currentUserId');
+		$user = User::getUserInfo($value);
+		if($user->integral > 0){
+			$data = Input::all();
+			$rules = array(
+	            'company' => 'required',
+	            'address' => 'required|min:6',
+	        );
+	        $validator = Validator::make($data, $rules);
+	        if ($validator->fails()){
+	            return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors($validator);
+	        }else{
+	        	// $datas[''] = $data[''];
+	        	$res = Dashboard::addJob($data);
+	        	if($res){
+					User::deductint($value);
+					return Redirect::to('dashboard/jobList');
+	        	}else{
+	        		
+	        	}
+	        }
+		}else{
+			return Redirect::to('dashboard/jobList');
+		}
 	}
 	/**
 	 * Show the form for creating a new resource.
