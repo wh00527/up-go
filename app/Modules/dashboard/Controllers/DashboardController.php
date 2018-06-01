@@ -20,6 +20,8 @@ class DashboardController extends Controller {
 
     public function __construct(){
         $value = Session::get('currentUserId');
+        $user_type = Session::get('currentUserRole');
+        echo $user_type;
         if(!$value){
             Redirect::to('user')->send();
         }
