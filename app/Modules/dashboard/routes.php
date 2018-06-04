@@ -16,5 +16,7 @@ Route::group(array('module' => 'Dashboard', 'namespace' => 'App\Modules\Dashboar
 
     Route::get('dashboard/editUserInfo', 'DashboardController@editUserInfo');
     
+    Route::post('dashboard/editUserInfo', 'DashboardController@editUserInfo');
+
     Route::resource('dashboard', 'DashboardController');
 });	

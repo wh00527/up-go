@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Session;
 use Redirect;
 use Validator;
+use Storage;
 use App\Modules\User\Models\User;
 use App\Modules\dashboard\Models\Dashboard;
 use Illuminate\Support\Facades\Input;
@@ -21,11 +22,12 @@ class DashboardController extends Controller {
     public function __construct(){
         $value = Session::get('currentUserId');
         $user_type = Session::get('currentUserRole');
-        echo $user_type;
         if(!$value){
             Redirect::to('user')->send();
         }
-
+        if($user_type != 1){
+//            Redirect::to();
+        }
     }
 
 	public function index(){
@@ -67,15 +69,31 @@ class DashboardController extends Controller {
 		$value = Session::get('currentUserId');
 		$user = User::getUserInfo($value);
 		if($user->company && $user->address){
-			return view("dashboard::index",compact('user'));
+			return view("dashboard::test",compact('user'));
 		}else{
 			return Redirect::to('dashboard/settings');
 		}
 	}
 
 	public function editUserInfo(){
-		$value = Session::get('currentUserId');
-		$data = Input::all();
+		// $data = Input::all();
+		$file = Input::file('CV');
+		if(!empty($file)){  
+			$ext = $file->getClientOriginalExtension();  
+  
+            //获取文件的绝对路径  
+            $path = $file->getRealPath();  
+
+            //定义文件名  
+            $filename = date('Y-m-d-h-i-s').'.'.$ext;  
+            echo $path;
+            //存储文件。disk里面的public。总的来说，就是调用disk模块里的public配置  
+            Storage::disk('public')->put($filename, file_get_contents($path));
+		} else{
+			echo 123;exit;
+		} 
+			// var_dump($path);
+			exit;
 		// $data['company'] = 1;
 		// $data['address'] = 2;
 		// $data['billing_address'] = 3;
@@ -89,6 +107,7 @@ class DashboardController extends Controller {
   //       if ($validator->fails()){
   //           return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors($validator);
   //       }else{
+		$value = Session::get('currentUserId');
         	$user = User::getUserInfo($value);
         	if($user->type != 1){
         		return Redirect::to('homepage');
