@@ -78,22 +78,16 @@ class DashboardController extends Controller {
 	public function editUserInfo(){
 		// $data = Input::all();
 		$file = Input::file('CV');
-		if(!empty($file)){  
-			$ext = $file->getClientOriginalExtension();  
-  
-            //获取文件的绝对路径  
-            $path = $file->getRealPath();  
-
-            //定义文件名  
-            $filename = date('Y-m-d-h-i-s').'.'.$ext;  
-            echo $path;
-            //存储文件。disk里面的public。总的来说，就是调用disk模块里的public配置  
-            Storage::disk('public')->put($filename, file_get_contents($path));
-		} else{
-			echo 123;exit;
-		} 
+		if(!empty($file)){// 上传功能
+            $clientName = $file -> getClientOriginalName();
+			$tmpName = $file ->getFileName();
+			$realPath = $file -> getRealPath();
+			$entension = $file -> getClientOriginalExtension(); 
+			$mimeTye = $file -> getMimeType();
+			$newName = md5(date("Y-m-d H:i:s").$clientName).".".$entension;
+			$path = $file -> move(public_path().'/storage/uploads',$newName);
+		}
 			// var_dump($path);
-			exit;
 		// $data['company'] = 1;
 		// $data['address'] = 2;
 		// $data['billing_address'] = 3;

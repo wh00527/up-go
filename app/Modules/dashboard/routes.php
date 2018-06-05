@@ -14,7 +14,7 @@ Route::group(array('module' => 'Dashboard', 'namespace' => 'App\Modules\Dashboar
 
     Route::get('dashboard/release', 'DashboardController@setJob');
 
-    Route::get('dashboard/editUserInfo', 'DashboardController@editUserInfo');
+    // Route::get('dashboard/editUserInfo', 'DashboardController@editUserInfo');
     
     Route::post('dashboard/editUserInfo', 'DashboardController@editUserInfo');
 
