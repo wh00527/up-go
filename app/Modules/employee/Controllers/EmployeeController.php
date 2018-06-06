@@ -1,4 +1,4 @@
-<?php namespace App\Modules\Dashboard\Controllers;
+<?php namespace App\Modules\Employee\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -9,9 +9,10 @@ use Validator;
 use Storage;
 use App\Modules\User\Models\User;
 use App\Modules\dashboard\Models\Dashboard;
+use App\Modules\employee\Models\Employee;
 use Illuminate\Support\Facades\Input;
 
-class DashboardController extends Controller {
+class EmployeeController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -19,26 +20,27 @@ class DashboardController extends Controller {
 	 * @return Response
 	 */
 
-    public function __construct(){
-        $value = Session::get('currentUserId');
-        $user_type = Session::get('currentUserRole');
-        if(!$value){
-            Redirect::to('user')->send();
-        }
-        if($user_type != 1){
-           Redirect::to('employee');
-        }
-    }
+//     public function __construct(){
+//         $value = Session::get('currentUserId');
+//         $user_type = Session::get('currentUserRole');
+//         if(!$value){
+//             Redirect::to('user')->send();
+//         }
+//         if($user_type != 1){
+// //            Redirect::to();
+//         }
+//     }
 
 	public function index(){
 		$value = Session::get('currentUserId');
-		$user = User::getUserInfo($value);
-		$rcount = Dashboard::getReleaseCount($value);
-		$vcount = Dashboard::getValidCount($value);
-		$icount = Dashboard::getInvalidCount($value);
-		$acount = Dashboard::getApplyCount($value);
-		$data = Dashboard::getNewestJobs($value);
-		return view("dashboard::index",compact('user','rcount','vcount','icount','acount','data'));
+		echo 12344124;exit;
+		// $user = User::getUserInfo($value);
+		// $rcount = Dashboard::getReleaseCount($value);
+		// $vcount = Dashboard::getValidCount($value);
+		// $icount = Dashboard::getInvalidCount($value);
+		// $acount = Dashboard::getApplyCount($value);
+		// $data = Dashboard::getNewestJobs($value);
+		// return view("dashboard::index",compact('user','rcount','vcount','icount','acount','data'));
 	}
 
 	public function jobList(){
@@ -163,6 +165,35 @@ class DashboardController extends Controller {
 			return Redirect::to('dashboard/jobList');
 		}
 	}
+
+	public function collection(){
+		$value = Session::get('currentUserId');
+		if(!$value){
+			return \Response::json(['status' => 'error', 'error_msg' => 'Please log in first', 'code' => 2]);
+		}
+		$id = Input::get('id');
+		$data = Employee::collection($value,$id);
+		if($data){
+			return \Response::json(['status' => 'error', 'error_msg' => 'Collection success', 'code' => 1]);
+		}else{
+			return \Response::json(['status' => 'error', 'error_msg' => 'Collection failure', 'code' => 0]);
+		}
+	}
+
+	public function apply(){
+		$value = Session::get('currentUserId');
+		if(!$value){
+			return \Response::json(['status' => 'error', 'error_msg' => 'Please log in first', 'code' => 2]);
+		}
+		$id = Input::get('id');
+		$data = Employee::apply($value,$id);
+		if($data){
+			return \Response::json(['status' => 'error', 'error_msg' => 'Application success', 'code' => 1]);
+		}else{
+			return \Response::json(['status' => 'error', 'error_msg' => 'Application failure', 'code' => 0]);
+		}
+	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 *

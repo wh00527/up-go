@@ -107,8 +107,7 @@ class UserController extends Controller
                     if($user[0]->type == 1){
                         return Redirect::to('dashboard');
                     }else{
-                        echo 2;exit;
-                        return Redirect::to('dashboard');
+                        return Redirect::to('employee');
                     }
                 }else{
                     Session::flash('error', 'Incorrect password combination');
@@ -124,16 +123,37 @@ class UserController extends Controller
     }
 
     public function sendMail(){
-        $name = 'HaHa';
-        $flag = Mail::send('user::tests',['name'=>$name],function($message){
-            $to = '2427380865@qq.com';
-            $message ->to($to)->subject('测试邮件');
-        });
-        if($flag){
-            echo '发送邮件成功，请查收！';
-        }else{
-            echo '发送邮件失败，请重试！';
-        }
+        // $data = Input::all();
+        // $rules = array(
+        //     'email' => 'required|email',
+        // );
+        // $validator = Validator::make($data, $rules);
+        // if ($validator->fails()){
+        //     // If validation falis redirect back to login.
+        //     return Redirect::back()->withErrors($validator);
+        // }else{
+            $email = '2427380865@qq.com';
+            $user = User::checkLogin('asdhh1@qq.com');
+            if($user[0]->name){
+                $data['name'] = $user[0]->name;
+            }else{
+                $data['name'] = '';
+            }
+            $data['email'] = $email;
+            $flag = Mail::send('user::tests',['data'=>$data],function($message) use ($data) {
+                $to = $data['email'];
+                $message->to($to)->subject('reset password');
+            });
+            if($flag){
+            //     echo '发送邮件成功，请查收！';
+            // }else{
+            //     echo '发送邮件失败，请重试！';
+            // }
+                return \Response::json(['status' => 'ok', 'error_msg' => 'Send the mail successfully, please check it!', 'code' => 1]);
+            }else{
+                return \Response::json(['status' => 'error', 'error_msg' => 'Send mail failed! ', 'code' => 0]);
+            }
+        // }
     }
 
     public function logout(){

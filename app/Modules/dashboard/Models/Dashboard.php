@@ -14,7 +14,7 @@ class Dashboard extends Model {
 
 	protected function getReleaseCount($id){
 		$data = DB::table('job')
-			->where('uid', '=', $id)
+			->where('user_id', '=', $id)
 			->count();
 		return $data;
 	}
@@ -22,7 +22,7 @@ class Dashboard extends Model {
 	protected function getValidCount($id){
 		$time = time();
 		$data = DB::table('job')
-			->where('uid', '=', $id)
+			->where('user_id', '=', $id)
 			->where('starttime','<=',$time)
 			->where('endtime','>=',$time)
 			->count();
@@ -32,12 +32,12 @@ class Dashboard extends Model {
 	protected function getInvalidCount($id){
 		$time = time();
 		$startdata = DB::table('job')
-			->where('uid', '=', $id)
+			->where('user_id', '=', $id)
 			->where('starttime','>=',$time)
 			// ->where('endtime','<=',$time)
 			->count();
 		$enddata = DB::table('job')
-			->where('uid', '=', $id)
+			->where('user_id', '=', $id)
 			// ->where('starttime','>=',$time)
 			->where('endtime','<=',$time)
 			->count();
@@ -54,7 +54,7 @@ class Dashboard extends Model {
 
 	protected function getNewestJobs($id){
 		$data = DB::table('job')
-			->where('uid', '=', $id)
+			->where('user_id', '=', $id)
 			->orderBy('id','desc')
 			->take(2)
 			// ->where('endtime','<=',$time)
@@ -64,7 +64,7 @@ class Dashboard extends Model {
 
 	protected function getJobList($id){
 		$data = DB::table('job')
-			->where('uid', '=', $id)
+			->where('user_id', '=', $id)
 			->paginate(5);
 		return $data;
 	}
@@ -86,13 +86,13 @@ class Dashboard extends Model {
 		$data = DB::table('job')
             ->leftJoin('apply', 'job.id', '=', 'apply.job_id')
             ->leftJoin('user', 'user.id', '=', 'apply.user_id')
-			->where('uid', '=', $id)
+			->where('user_id', '=', $id)
 			->get();
 		return $data;
 	}
 
 	protected function addJob($data){
-		$user = DB::insert('insert into job (title, trade_type,location,job_type,salary_range,apprentice,summary,description,logo,starttime,endtime,uid) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [$data,$data,$data,$data0]);
+		$user = DB::insert('insert into job (title, trade_type,location,job_type,salary_range,apprentice,summary,description,logo,starttime,endtime,user_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [$data,$data,$data,$data0]);
 		return $user;
 	}
 }
