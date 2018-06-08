@@ -92,7 +92,7 @@ class Dashboard extends Model {
 	}
 
 	protected function addJob($data){
-		$user = DB::insert('insert into job (title, trade_type,location,job_type,salary_range,apprentice,summary,description,logo,starttime,endtime,user_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [$data,$data,$data,$data0]);
+		$user = DB::insert('insert into job (title, trade_type,location,job_type,salary_range,apprentice,summary,description,logo,starttime,endtime,user_id,logo) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [$data,$data,$data]);
 		return $user;
 	}
 }

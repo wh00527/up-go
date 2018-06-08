@@ -6,7 +6,7 @@ use DB;
 class Employee extends Model {
 
 	// protected $table = 'job';
-	// 
+
 	protected function getJobList(){
 		$data = DB::table('job')
 			->orderBy('id','desc')

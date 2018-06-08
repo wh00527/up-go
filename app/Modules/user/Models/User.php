@@ -54,11 +54,18 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
         return $user;
     }
 
-    protected function editUserInfo($id,$data){
+    protected function editCompanyUserInfo($id,$data){
         // var_dump($data);exit;
         DB::table('user')
             ->where('id', $id)
             ->update(['company' => $data['company'] , 'address' => $data['address'] , 'billing_address' => $data['billing_address'] , 'phone' => $data['phone'] , 'name' => $data['name']])
+        ;
+    }
+
+    protected function editUserInfo($id,$data){
+        DB::table('user')
+            ->where('id', $id)
+            ->update(['CV' => $data['CV'] , 'address' => $data['address'] , 'summary' => $data['summary'] , 'phone' => $data['phone'] , 'name' => $data['name'] , 'summary' => $data['summary'] , 'description' => $data['description'] , 'license' => $data['license'] , 'additional_details' => $data['additional_details'] , 'references' => $data['references'] , 'examples' => $data['examples']])
         ;
     }
 

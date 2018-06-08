@@ -105,11 +105,24 @@ class EmployeeController extends Controller {
   //       }else{
 		$value = Session::get('currentUserId');
         	$user = User::getUserInfo($value);
-        	if($user->type != 1){
+        	if($user->type != 2){
         		return Redirect::to('homepage');
         	}else{
-        		$datas = array();
-	        	// $datas[''] = $data[''];
+                $file = Input::file('CV');
+				if(!empty($file)){
+					$clientName = $file -> getClientOriginalName();
+					$tmpName = $file ->getFileName();
+					$realPath = $file -> getRealPath();
+					$entension = $file -> getClientOriginalExtension();
+					$mimeTye = $file -> getMimeType();
+					$newName = md5(date("Y-m-d H:i:s").$clientName).".".$entension;
+					$path = $file -> move(public_path().'/storage/uploads',$newName);
+				}
+				$datas = array();
+				// $datas[''] = $data[''];
+				if($path){
+					$datas['CV'] = $path;
+				}
         		$user = User::editUserInfo($value,$datas);
         		if($user){
         			// error

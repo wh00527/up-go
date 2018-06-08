@@ -76,65 +76,53 @@ class DashboardController extends Controller {
 	}
 
 	public function editUserInfo(){
-		// $data = Input::all();
-		$file = Input::file('CV');
-		if(!empty($file)){// 上传功能
-            $clientName = $file -> getClientOriginalName();
-			$tmpName = $file ->getFileName();
-			$realPath = $file -> getRealPath();
-			$entension = $file -> getClientOriginalExtension(); 
-			$mimeTye = $file -> getMimeType();
-			$newName = md5(date("Y-m-d H:i:s").$clientName).".".$entension;
-			$path = $file -> move(public_path().'/storage/uploads',$newName);
-		}
-			// var_dump($path);
+		$data = Input::all();
 		// $data['company'] = 1;
 		// $data['address'] = 2;
 		// $data['billing_address'] = 3;
 		// $data['phone'] = 4;
 		// $data['name'] = 5;
-		// $rules = array(
-  //           'company' => 'required',
-  //           'address' => 'required|min:6',
-  //       );
-  //       $validator = Validator::make($data, $rules);
-  //       if ($validator->fails()){
-  //           return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors($validator);
-  //       }else{
-		$value = Session::get('currentUserId');
-        	$user = User::getUserInfo($value);
-        	if($user->type != 1){
-        		return Redirect::to('homepage');
-        	}else{
-        		$datas = array();
-	        	// $datas[''] = $data[''];
-        		$user = User::editUserInfo($value,$datas);
-        		if($user){
-        			// error
-        			return Redirect::to('dashboard/settings');
-        		}else{
-        			// ok
-        			return Redirect::to('dashboard/settings');
-        		}
-        	}
-            // $userinfo = User::checkLogin(Input::get('email'));
-            // if($userinfo){
-            //     return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors('邮箱已注册');
-            // }else{
-            //     $user = User::signUp(Input::get('email'),Hash::make(Input::get('password')),Input::get('type'));
-            //     if($user){
-            //         $userinfo = User::checkLogin(Input::get('email'));
-            //         if($userinfo){
-            //             Session::put('currentUserId', $userinfo[0]->id);
-            //             return Redirect::to('dashboard');
-            //         }else{
-            //             return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors($validator);
-            //         }
-            //     }else{
-            //         return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors($validator);
-            //     }
-            // }
-        // }
+		$rules = array(
+		 'company' => 'required',
+		 'address' => 'required|min:6',
+		);
+		$validator = Validator::make($data, $rules);
+		if ($validator->fails()){
+			return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors($validator);
+		}else{
+			$value = Session::get('currentUserId');
+			$user = User::getUserInfo($value);
+			if($user->type != 1){
+				return Redirect::to('homepage');
+			}else{
+                $datas = array();
+				$user = User::editCompanyUserInfo($value,$datas);
+				if($user){
+				// ok
+					return Redirect::to('dashboard/settings');
+				}else{
+				// error
+					return Redirect::to('dashboard/settings');
+				}
+			}
+			// $userinfo = User::checkLogin(Input::get('email'));
+			// if($userinfo){
+			//     return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors('邮箱已注册');
+			// }else{
+			//     $user = User::signUp(Input::get('email'),Hash::make(Input::get('password')),Input::get('type'));
+			//     if($user){
+			//         $userinfo = User::checkLogin(Input::get('email'));
+			//         if($userinfo){
+			//             Session::put('currentUserId', $userinfo[0]->id);
+			//             return Redirect::to('dashboard');
+			//         }else{
+			//             return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors($validator);
+			//         }
+			//     }else{
+			//         return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors($validator);
+			//     }
+			// }
+		}
 	}
 
 	public function addJob(){
@@ -150,6 +138,16 @@ class DashboardController extends Controller {
 	        if ($validator->fails()){
 	            return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors($validator);
 	        }else{
+	        	$file = Input::file('Logo');
+				if(!empty($file)){
+					$clientName = $file -> getClientOriginalName();
+					$tmpName = $file ->getFileName();
+					$realPath = $file -> getRealPath();
+					$entension = $file -> getClientOriginalExtension();
+					$mimeTye = $file -> getMimeType();
+					$newName = md5(date("Y-m-d H:i:s").$clientName).".".$entension;
+					$path = $file -> move(public_path().'/storage/uploads',$newName);
+				}
 	        	// $datas[''] = $data[''];
 	        	$res = Dashboard::addJob($data);
 	        	if($res){
