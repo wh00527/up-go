@@ -32,15 +32,18 @@ class EmployeeController extends Controller {
 //     }
 
 	public function index(){
-		$value = Session::get('currentUserId');
-		echo 12344124;exit;
+		$value = 1;
+		$datas = Dashboard::getJobList($value);
+		$datas->setPath('employee');
+		// return view('dashboard::index',compact('datas'));
+		
 		// $user = User::getUserInfo($value);
 		// $rcount = Dashboard::getReleaseCount($value);
 		// $vcount = Dashboard::getValidCount($value);
 		// $icount = Dashboard::getInvalidCount($value);
 		// $acount = Dashboard::getApplyCount($value);
 		// $data = Dashboard::getNewestJobs($value);
-		// return view("dashboard::index",compact('user','rcount','vcount','icount','acount','data'));
+		// return view("dashboard::index",compact('user','rcount','vcount','icount','acount','data','datas'));
 	}
 
 	public function jobList(){

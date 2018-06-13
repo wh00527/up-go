@@ -65,7 +65,7 @@ class Dashboard extends Model {
 	protected function getJobList($id){
 		$data = DB::table('job')
 			->where('user_id', '=', $id)
-			->paginate(5);
+			->paginate(1);
 		return $data;
 	}
 

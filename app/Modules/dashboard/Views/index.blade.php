@@ -79,7 +79,7 @@
                     </span>
             </div>
         @endforeach
-
+        {!! $datas->render()!!}
             <div class="col-lg-1 col-md-1 col-xs-0"></div>
             <div class="dash-container col-lg-4 col-md-4 col-xs-12">
                 <span class="m-b-2">Ad packs</span>
