@@ -34,7 +34,7 @@
     </div>
 </div>
 
-{!! Form::open(array('url' => 'user/login')) !!}
+{!! Form::open(array('url' => 'employee/jobList')) !!}
 <div class="row homepage-search-container">
     <div class="col-xs-12 col-md-4">
         <fieldset class="form-group text-xs-left has-success-crm">

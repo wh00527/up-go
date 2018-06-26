@@ -32,14 +32,14 @@ class UserController extends Controller
     public function index()
     {
         if( Session::get('currentUserId') ){
-            return Redirect::to('dashboard');
+            return Redirect::to('business');
         }else{
             return view('user::index');
         }
     }
 
     public function sign(){
-        return view('user::index');
+        return view('user::createUser');
     }
 
     public function postSign(){
@@ -47,7 +47,7 @@ class UserController extends Controller
         $rules = array(
             'email' => 'required|email',
             'password' => 'required|min:6',
-            'type' => 'required',
+            'type' => 'required|integer',
         );
         $validator = Validator::make($data, $rules);
         if ($validator->fails()){
@@ -55,7 +55,7 @@ class UserController extends Controller
         }else{
             $userinfo = User::checkLogin(Input::get('email'));
             if($userinfo){
-                return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors('邮箱已注册');
+                return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors('Email has been registered!');
             }else{
                 $user = User::signUp(Input::get('email'),Hash::make(Input::get('password')),Input::get('type'));
                 if($user){
@@ -63,7 +63,7 @@ class UserController extends Controller
                     if($userinfo){
                         Session::put('currentUserId', $userinfo[0]->id);
                         Session::put('currentUserRole', $userinfo[0]->type);
-                        return Redirect::to('dashboard');
+                        return Redirect::to('business');
                     }else{
                         return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors($validator);
                     }
@@ -82,7 +82,6 @@ class UserController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:6',
         );
-
         $validator = Validator::make($data, $rules);
         if ($validator->fails()){
             // If validation falis redirect back to login.
@@ -105,7 +104,7 @@ class UserController extends Controller
                     // Session::put('currentUserDetails', $currentUserDetails );
                     // Session::put('currentUserRole', $currentUserRole );
                     if($user[0]->type == 1){
-                        return Redirect::to('dashboard');
+                        return Redirect::to('business');
                     }else{
                         return Redirect::to('employee');
                     }
@@ -123,17 +122,18 @@ class UserController extends Controller
     }
 
     public function sendMail(){
-        // $data = Input::all();
-        // $rules = array(
-        //     'email' => 'required|email',
-        // );
-        // $validator = Validator::make($data, $rules);
-        // if ($validator->fails()){
-        //     // If validation falis redirect back to login.
-        //     return Redirect::back()->withErrors($validator);
-        // }else{
-            $email = '2427380865@qq.com';
-            $user = User::checkLogin('asdhh1@qq.com');
+        $data = Input::all();
+        $rules = array(
+            'email' => 'required|email',
+        );
+        $validator = Validator::make($data, $rules);
+        if ($validator->fails()){
+            // If validation falis redirect back to login.
+            return Redirect::back()->withErrors($validator);
+        }else{
+            // var_dump();exit;
+            $email = $data['email'];
+            $user = User::checkLogin($email);
             if($user[0]->name){
                 $data['name'] = $user[0]->name;
             }else{
@@ -145,15 +145,11 @@ class UserController extends Controller
                 $message->to($to)->subject('reset password');
             });
             if($flag){
-            //     echo '发送邮件成功，请查收！';
-            // }else{
-            //     echo '发送邮件失败，请重试！';
-            // }
-                return \Response::json(['status' => 'ok', 'error_msg' => 'Send the mail successfully, please check it!', 'code' => 1]);
+                return \Response::json(['status' => 'ok', 'msg' => 'Send the mail successfully, please check it!', 'code' => 1]);
             }else{
-                return \Response::json(['status' => 'error', 'error_msg' => 'Send mail failed! ', 'code' => 0]);
+                return \Response::json(['status' => 'error', 'msg' => 'Send mail failed! ', 'code' => 0]);
             }
-        // }
+        }
     }
 
     public function logout(){

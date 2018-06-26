@@ -23,7 +23,7 @@
         </div>
         @endif
         <div class="controls">
-            {!! Form::text('email','',array('id'=>'','class'=>'form-control span6','placeholder' => 'Please Enter your Email')) !!}
+            {!! Form::text('email','',array('id'=>'email','class'=>'form-control span6','placeholder' => 'Please Enter your Email')) !!}
             <p class="errors">{{$errors->first('email')}}</p>
         </div>
         <div class="controls">
@@ -33,18 +33,14 @@
         <div class="controls">
             <input type="checkbox" name="vehicle" value="Bike"> Remember me
 
-            <a href="/user/sendMail" class="component_9w5i1l">Forgot password?</a>
+            <a onclick="sendMail()" class="component_9w5i1l">Forgot password?</a>
         </div>
-        <!-- <div class="controls">
-            <input type="radio" name="type" id="" value="1" checked="checked">雇主
-            <input type="radio" name="type" id="" value="2">雇员
-        </div> -->
         <div class="controls">
             <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
 
         </div>
         <div class="controls" style="margin-top: 10%;">
-            <p>Don't have an account?  <a href="/user/create-user">Sign up</a></p>
+            <p>Don't have an account?  <a href="/user/sign-up">Sign up</a></p>
         </div>
 
         {!! Form::close() !!}
@@ -57,3 +53,39 @@
 @section('page_footer')
 
 @endsection
+<script>
+function sendMail(){
+    var email = $('#email').val();
+    var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+    if(email === ""){ //输入不能为空
+　　　　alert("Email Can't be empty!");
+　　　　return false;
+　　}else if(!reg.test(email)){ //正则验证不通过，格式不对
+　　　　alert("Please enter the correct Email!");
+　　　　return false;
+　　}else{
+　　　　$.ajax({
+            url:"/user/sendMail",
+            type:'GET',
+            data:{
+                email:email,
+            },
+            dataType:'json',
+            success:function(data){
+                if(data.status=="ok"){
+                    alert(data.msg);
+                }else{
+                    alert(data.msg);
+                }
+            },
+            error:function(data,status,e){
+                alert('error');
+            },
+            timeout:3000,
+            async:true
+        });
+　　}
+}
+
+// /
+</script>

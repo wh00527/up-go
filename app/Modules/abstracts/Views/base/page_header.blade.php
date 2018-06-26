@@ -11,7 +11,7 @@
             </div>
         <?php else: ?>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 header-sign-up hidden-sm-down">
-                Don't have an account? <a href="/user/signup" class="">Sign up </a>
+                Don't have an account? <a href="/user/sign-up" class="">Sign up </a>
             </div>
     <?php endif; ?>
 </div>

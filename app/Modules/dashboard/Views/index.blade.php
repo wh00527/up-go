@@ -68,7 +68,7 @@
         @foreach ($data as $data)
             <!-- <p>This is user {{ $data->id }}</p> -->
             <div class="dash-container col-lg-7 col-md-7 col-xs-12">
-                <h5>Qualified Carpenter needed ASAP. Please only apply</h5>
+                <a href=""><h5>Qualified Carpenter needed ASAP. Please only apply</h5></a>
                 <span>Melbourne, VIC, 3000</span>
                 <span class="blue">2 new connections</span>
                     <span class="pull-left time-remaining">
@@ -79,7 +79,6 @@
                     </span>
             </div>
         @endforeach
-        {!! $datas->render()!!}
             <div class="col-lg-1 col-md-1 col-xs-0"></div>
             <div class="dash-container col-lg-4 col-md-4 col-xs-12">
                 <span class="m-b-2">Ad packs</span>

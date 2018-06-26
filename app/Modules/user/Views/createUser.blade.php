@@ -15,7 +15,7 @@
             <!--            </div>-->
             <!---->
             <!--        </form>-->
-            {!! Form::open(array('url' => 'user/login')) !!}
+            {!! Form::open(array('url' => 'user/sign')) !!}
             @if(Session::has('error'))
                 <div class="alert-box success">
                     <h2>{{ Session::get('error') }}</h2>
@@ -28,6 +28,10 @@
             <div class="controls">
                 {!! Form::password('password',array('class'=>'form-control span6', 'placeholder' => 'Please Enter your Password')) !!}
                 <p class="errors">{{$errors->first('password')}}</p>
+            </div>
+            <div class="controls" style="height:30px;">
+                <input type="radio" name="type" id="" value="1" style="vertical-align: sub;" checked="checked">  Company
+                <input type="radio" name="type" id="" value="2" style="margin-left: 10px;vertical-align: sub;">  Employee
             </div>
             <div class="controls">
                 <button type="submit" class="btn btn-primary block full-width m-b">Sign up</button>
