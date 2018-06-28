@@ -19,10 +19,10 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <fieldset class="m-b-1 text-xs-left has-success-crm">
-                                    <input type="text" name="job-title" value="" class="form-control valid" placeholder="Search by job title">
+                                    <input type="text" id="title" onblur="search()" name="job-title" value="{{$title}}" class="form-control valid" placeholder="Search by job title">
                                 </fieldset>
                                 <fieldset class="form-group text-xs-left has-success-crm">
-                                    <input type="text" name="MinGuest" data-validation="required" value="" class="form-control valid" placeholder="Search by trade">
+                                    <input type="text" id="trade" onblur="search()" name="MinGuest" data-validation="required" value="{{$trade}}" class="form-control valid" placeholder="Search by trade">
                                 </fieldset>
                             </div>
                         </div>
@@ -65,3 +65,19 @@
         </div>
     </div>
 @endsection
+<script>
+function search(){
+    var trade = $("#trade").val();
+    var title = $("#title").val();
+    if(title && trade){
+        window.location.href="/business/searchJob/"+title+"/"+trade;
+    }else{
+        if(title){
+            window.location.href="/business/searchJob/"+title;
+        }
+        if(trade){
+            window.location.href="/business/searchJobs/"+trade;
+        }
+    }
+}
+</script>

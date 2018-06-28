@@ -49,7 +49,23 @@ class BusinessController extends Controller {
 	public function jobList(){
 		$value = Session::get('currentUserId');
 		$data = Business::getJobList($value);
-		return view("business::jobs",compact('data'));
+		$title = '';
+		$trade = '';
+		return view("business::jobs",compact('data','title','trade'));
+	}
+
+	public function searchJob(Request $request){
+		$value = Session::get('currentUserId');
+		$title = '';
+		$trade = '';
+		if($request->title){
+			$title = $request->title;
+		}
+		if($request->trade){
+			$trade = $request->trade;
+		}
+		$data = Business::getSearchJobList($value,$title,$trade);
+		return view("business::jobs",compact('data','title','trade'));
 	}
 
 	public function jobInfo($id){
@@ -110,23 +126,6 @@ class BusinessController extends Controller {
 					return Redirect::to('dashboard/settings');
 				}
 			}
-			// $userinfo = User::checkLogin(Input::get('email'));
-			// if($userinfo){
-			//     return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors('邮箱已注册');
-			// }else{
-			//     $user = User::signUp(Input::get('email'),Hash::make(Input::get('password')),Input::get('type'));
-			//     if($user){
-			//         $userinfo = User::checkLogin(Input::get('email'));
-			//         if($userinfo){
-			//             Session::put('currentUserId', $userinfo[0]->id);
-			//             return Redirect::to('dashboard');
-			//         }else{
-			//             return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors($validator);
-			//         }
-			//     }else{
-			//         return Redirect::to('user/sign-up')->withInput(Input::except('password'))->withErrors($validator);
-			//     }
-			// }
 		}
 	}
 

@@ -13,6 +13,10 @@ Route::group(array('module' => 'Business', 'namespace' => 'App\Modules\Business\
     Route::get('business/settings', 'BusinessController@settings');
 
     Route::get('business/release', 'BusinessController@setJob');
+
+    Route::get('business/searchJob/{title}/{trade?}', 'BusinessController@searchJob');
+
+    Route::get('business/searchJobs/{trade}', 'BusinessController@searchJob');
     
     Route::post('business/editUserInfo', 'BusinessController@editUserInfo');
 

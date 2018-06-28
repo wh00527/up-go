@@ -38,7 +38,7 @@
 <div class="row homepage-search-container">
     <div class="col-xs-12 col-md-4">
         <fieldset class="form-group text-xs-left has-success-crm">
-            <input type="text" name="title" data-validation="required" value="" class="form-control valid" placeholder="Keywords">
+            <input type="text" name="title" data-validation="required" value="" class="form-control valid" placeholder="Title">
         </fieldset>
     </div>
     <div class="col-xs-12 col-md-4">

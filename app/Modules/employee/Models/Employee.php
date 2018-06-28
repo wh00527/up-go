@@ -13,6 +13,13 @@ class Employee extends Model {
 			->paginate(5);
 		return $data;
 	}
+
+	protected function getSearchJobList($title,$location,$trade){
+		$data = DB::table('job')
+			->orderBy('id','desc')
+			->paginate(5);
+		return $data;
+	}
 	
 	protected function collection($id,$jobId){
 		$user = DB::insert('insert into collection (user_id, job_id) values (?, ?)', [$id,$jobId]);
