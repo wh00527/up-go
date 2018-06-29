@@ -47,9 +47,24 @@ class EmployeeController extends Controller {
 	}
 
 	public function jobList(){
-		$value = Session::get('currentUserId');
-		$data = Dashboard::getJobList($value);
+		$data = Dashboard::getJobList();
 		return view("business::jobs",compact('data'));
+	}
+
+	public function searchJob(Request $request){
+		$title = '';
+		$location = '';
+		$trade = '';
+		if($request->title){
+			$title = $request->title;
+		}
+		if($request->location){
+			$location = $request->location;
+		}
+		if($request->trade){
+			$trade = $request->trade;
+		}
+		$data = Employee::getSearchJobList($title,$location,$trade);
 	}
 
 	public function jobInfo($id){

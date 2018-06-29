@@ -15,9 +15,58 @@ class Employee extends Model {
 	}
 
 	protected function getSearchJobList($title,$location,$trade){
-		$data = DB::table('job')
-			->orderBy('id','desc')
-			->paginate(5);
+		if($trade){
+			$tid = DB::table('trade')
+					->where('title', 'like', '%'.$trade.'%')
+					->lists('id');
+		}
+		if($title && $location && $trade){
+			$data = DB::table('job')
+					->where('title','like','%'.$title.'%')
+					->where('location','like','%'.$location.'%')
+					->whereIn('trade_type', $tid)
+					->orderBy('id','desc')
+					->paginate(5);
+		}else{
+			if($title && $location){
+				$data = DB::table('job')
+					->where('title','like','%'.$title.'%')
+					->where('location','like','%'.$location.'%')
+					->orderBy('id','desc')
+					->paginate(5);
+			}else if($title && $trade){
+				$data = DB::table('job')
+					->where('title','like','%'.$title.'%')
+					->whereIn('trade_type', $tid)
+					->orderBy('id','desc')
+					->paginate(5);
+			}else if($location && $trade){
+				$data = DB::table('job')
+					->where('location','like','%'.$location.'%')
+					->whereIn('trade_type', $tid)
+					->orderBy('id','desc')
+					->paginate(5);
+			}else if($title){
+				$data = DB::table('job')
+					->where('title','like','%'.$title.'%')
+					->orderBy('id','desc')
+					->paginate(5);
+			}else if($location){
+				$data = DB::table('job')
+					->where('location','like','%'.$location.'%')
+					->orderBy('id','desc')
+					->paginate(5);
+			}else if($trade){
+				$data = DB::table('job')
+					->whereIn('trade_type', $tid)
+					->orderBy('id','desc')
+					->paginate(5);
+			}else{
+				$data = DB::table('job')
+					->orderBy('id','desc')
+					->paginate(5);
+			}
+		}
 		return $data;
 	}
 	

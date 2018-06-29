@@ -70,11 +70,16 @@ class Business extends Model {
 	}
 
 	protected function getSearchJobList($id,$title,$trade){
+		if($trade){
+			$tid = DB::table('trade')
+					->where('title', 'like', '%'.$trade.'%')
+					->lists('id');
+		}
 		if($title && $trade){
 			$data = DB::table('job')
 					->where('user_id', '=', $id)
 					->where('title', 'like', '%'.$title.'%')
-					->where('trade_type', 'like', '%'.$trade.'%')
+					->whereIn('trade_type', $tid)
 					->paginate(1);
 		}else{
 			if($title){
@@ -86,7 +91,7 @@ class Business extends Model {
 			if($trade){
 				$data = DB::table('job')
 						->where('user_id', '=', $id)
-						->where('trade_type', 'like', '%'.$trade.'%')
+						->whereIn('trade_type', $tid)
 						->paginate(1);
 			}
 		}
